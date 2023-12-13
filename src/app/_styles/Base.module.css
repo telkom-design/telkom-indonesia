@@ -1,0 +1,19 @@
+.flex {
+  display: flex !important;
+}
+
+.items_center {
+  align-items: center !important;
+}
+
+.justify_center {
+  justify-content: center !important;
+}
+
+.flex_grow {
+  flex-grow: 1 !important;
+}
+
+.gap_3 {
+  gap: 12px !important;
+}

@@ -1,4 +1,5 @@
 import dynamic from "next/dynamic";
+import base from "../../../_styles/Base.module.css";
 import styles from "./Header.module.css";
 
 // icons
@@ -14,7 +15,7 @@ const Navbar = dynamic(
 
 export const Navigation = () => {
   return (
-    <Box padding="16px" className={`${styles.flex} ${styles.navigationBox}`}>
+    <Box padding="16px" className={`${base.flex} ${styles.navigationBox}`}>
       <Image src="/telkom-logo.svg" width="140px" height="32px" />
 
       <Navbar
@@ -113,10 +114,10 @@ export const Navigation = () => {
             title: <span>Careers</span>,
           },
         ]}
-        className={`${styles.flex} ${styles.flex_grow} ${styles.justify_center}`}
+        className={`${base.flex} ${base.flex_grow} ${base.justify_center}`}
       />
 
-      <Box className={`${styles.flex} ${styles.gap_3}`}>
+      <Box className={`${base.flex} ${base.gap_3}`}>
         <Button
           iconLeft={<IconSearch size={20} />}
           variant="soft"
