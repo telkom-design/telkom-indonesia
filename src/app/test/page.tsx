@@ -5,7 +5,7 @@ import styles from "./index.module.scss";
 const Component = () => {
   return (
     <div className={styles.rootLandingPage1929}>
-      <div className={styles.navbar}>
+      {/* <div className={styles.navbar}>
         <div className={styles.lgnNavbar}>
           <img
             src="https://p26-semi-sign.byteimg.com/tos-cn-i-acvclvrq33/53b11eb2eb91447fb413e43cb47418ca.png?rk3s=521bdb00&x-expires=1702497905&x-signature=c3%2BsdssnzAfSKhzChWOw%2FCnm990%3D"
@@ -105,7 +105,7 @@ const Component = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       <div className={styles.component36}>
         <div className={styles.component29}>
           <div className={styles.frame1215891403}>

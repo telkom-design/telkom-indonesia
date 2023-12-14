@@ -22,7 +22,7 @@ export default function RootLayout({
         <LegionProvider>
           <Navigation />
           {children}
-          <Footer />
+          {/* <Footer /> */}
         </LegionProvider>
       </body>
     </html>
