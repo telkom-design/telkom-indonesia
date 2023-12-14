@@ -7,7 +7,7 @@ import "./globals.css";
 import { LegionProvider } from "./_libs/providers";
 
 // organisms
-import { Navigation } from "./_components/organisms";
+import { Footer, Navigation } from "./_components/organisms";
 
 const lato = Lato({ weight: ["400", "700"], subsets: ["latin-ext"] });
 
@@ -22,6 +22,7 @@ export default function RootLayout({
         <LegionProvider>
           <Navigation />
           {children}
+          <Footer />
         </LegionProvider>
       </body>
     </html>
