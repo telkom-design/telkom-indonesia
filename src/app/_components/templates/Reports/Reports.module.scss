@@ -1,0 +1,47 @@
+.reportsBox {
+  display: grid !important;
+  grid-template-columns: minmax(0, 400px) 1fr 1fr;
+  column-gap: 2.5rem;
+
+  .reportsBoxCards {
+    grid-column: 2/4;
+
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 2.5rem;
+
+    .reportsBoxCardsLink {
+      text-decoration: none;
+      height: min-content;
+    }
+
+    .reportsBoxCardsLink:hover .reportsBoxCardsStatsArrowUpRight {
+      color: #e42313 !important;
+    }
+
+    .reportsBoxCardsLink:hover .reportsBoxCardsCard {
+      background-color: #000;
+    }
+
+    .reportsBoxCardsLink:hover .reportsBoxCardsCardTitle {
+      color: #fff;
+    }
+
+    .reportsBoxCardsCard {
+      transition: all 0.2s linear !important;
+      position: relative;
+
+      .reportsBoxCardsCardStats {
+        position: relative;
+        z-index: 1;
+      }
+
+      .reportsBoxCardsCardMask {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+      }
+    }
+  }
+}
