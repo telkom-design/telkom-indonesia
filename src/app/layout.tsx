@@ -1,7 +1,7 @@
 "use client";
 
 import { Lato } from "next/font/google";
-import "./globals.css";
+import "./globals.scss";
 
 // providers
 import { LegionProvider } from "./_libs/providers";
@@ -22,7 +22,7 @@ export default function RootLayout({
         <LegionProvider>
           <Navigation />
           {children}
-          {/* <Footer /> */}
+          <Footer />
         </LegionProvider>
       </body>
     </html>

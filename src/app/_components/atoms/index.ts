@@ -19,6 +19,16 @@ export const Button = dynamic(
   }
 );
 
+export const Divider = dynamic(
+  () => import("@legion-ui/core").then((component) => component.Divider),
+  { ssr: false }
+);
+
+export const Flex = dynamic(
+  () => import("@legion-ui/core").then((component) => component.Flex),
+  { ssr: false }
+);
+
 export const Image = dynamic(
   () => import("@legion-ui/core").then((component) => component.Image),
   { ssr: false }
