@@ -60,6 +60,20 @@ export const News = () => {
         <Box width="268px" height="auto" className={styles.newsBoxNewsCard}>
           <Box className={styles.newsBoxNewsCardImage} mb="24px">
             <Image src="/news-image.svg" width="267px" height="184px" />
+            <Image
+              src="/news-card-mask.svg"
+              width="183px"
+              height="64px"
+              className={styles.newsBoxNewsCardImageMask}
+            />
+            <Text
+              className={styles.newsBoxNewsCardImageDate}
+              as="p"
+              weight="400"
+              color="tertiary500"
+            >
+              25 December 2023
+            </Text>
           </Box>
 
           <Box style={{ whiteSpace: "break-spaces" }}>
@@ -89,6 +103,20 @@ export const News = () => {
         <Box width="268px" height="auto" className={styles.newsBoxNewsCard}>
           <Box className={styles.newsBoxNewsCardImage} mb="24px">
             <Image src="/news-image.svg" width="267px" height="184px" />
+            <Image
+              src="/news-card-mask.svg"
+              width="183px"
+              height="64px"
+              className={styles.newsBoxNewsCardImageMask}
+            />
+            <Text
+              className={styles.newsBoxNewsCardImageDate}
+              as="p"
+              weight="400"
+              color="tertiary500"
+            >
+              25 December 2023
+            </Text>
           </Box>
 
           <Box style={{ whiteSpace: "break-spaces" }}>
@@ -119,6 +147,20 @@ export const News = () => {
         <Box width="268px" height="auto" className={styles.newsBoxNewsCard}>
           <Box className={styles.newsBoxNewsCardImage} mb="24px">
             <Image src="/news-image.svg" width="267px" height="184px" />
+            <Image
+              src="/news-card-mask.svg"
+              width="183px"
+              height="64px"
+              className={styles.newsBoxNewsCardImageMask}
+            />
+            <Text
+              className={styles.newsBoxNewsCardImageDate}
+              as="p"
+              weight="400"
+              color="tertiary500"
+            >
+              25 December 2023
+            </Text>
           </Box>
 
           <Box style={{ whiteSpace: "break-spaces" }}>
@@ -149,6 +191,20 @@ export const News = () => {
         <Box width="268px" height="auto" className={styles.newsBoxNewsCard}>
           <Box className={styles.newsBoxNewsCardImage} mb="24px">
             <Image src="/news-image.svg" width="267px" height="184px" />
+            <Image
+              src="/news-card-mask.svg"
+              width="183px"
+              height="64px"
+              className={styles.newsBoxNewsCardImageMask}
+            />
+            <Text
+              className={styles.newsBoxNewsCardImageDate}
+              as="p"
+              weight="400"
+              color="tertiary500"
+            >
+              25 December 2023
+            </Text>
           </Box>
 
           <Box style={{ whiteSpace: "break-spaces" }}>
@@ -178,6 +234,20 @@ export const News = () => {
         <Box width="268px" height="auto" className={styles.newsBoxNewsCard}>
           <Box className={styles.newsBoxNewsCardImage} mb="24px">
             <Image src="/news-image.svg" width="267px" height="184px" />
+            <Image
+              src="/news-card-mask.svg"
+              width="183px"
+              height="64px"
+              className={styles.newsBoxNewsCardImageMask}
+            />
+            <Text
+              className={styles.newsBoxNewsCardImageDate}
+              as="p"
+              weight="400"
+              color="tertiary500"
+            >
+              25 December 2023
+            </Text>
           </Box>
 
           <Box style={{ whiteSpace: "break-spaces" }}>
