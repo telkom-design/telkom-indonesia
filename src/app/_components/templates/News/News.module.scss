@@ -45,8 +45,14 @@
 
         .newsBoxNewsCardImageMask {
           position: absolute;
-          left: 0;
+          left: -2px;
           bottom: 0;
+        }
+
+        .newsBoxNewsCardImageDate {
+          position: absolute;
+          left: 8px;
+          bottom: 8px;
         }
       }
 
