@@ -1,4 +1,5 @@
 .footerGrid {
+  padding: 56px 0 !important;
   display: grid;
   grid-template-columns:
     [full-width-start]
@@ -8,31 +9,47 @@
     [content-end]
     minmax(var(--padding-inline), 1fr)
     [full-width-end];
-}
-.footerGrid > :not(.full-width) {
-  grid-column: content;
-}
 
-.footerBox {
-  margin-top: 4rem; /* remove later */
+  > :not(.full-width) {
+    grid-column: content;
+  }
 
-  background-color: #1d1d1b !important;
-  border-radius: 2rem !important;
-  padding: 4.25rem 3.5rem;
-  position: relative !important;
-  display: grid !important;
-  grid-template-columns: 1fr 1fr 1fr;
-}
+  .footerBox {
+    background-color: #1d1d1b !important;
+    border-radius: 2rem !important;
+    position: relative !important;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
 
-.footerBox > * {
-  color: #ffffff !important;
-}
+    .footerBoxSocialDetails {
+      padding-top: 106px;
+      position: relative;
 
-.footerLogoBox {
-  background-color: #ffffff !important;
-  position: absolute !important;
-  top: 0 !important;
-  left: 0 !important;
-  padding: 1.25rem 3.5rem;
-  border-bottom-right-radius: 2rem !important;
+      .footerBoxSocialMediaBox {
+        gap: 14px;
+
+        .footerBoxSocialMedia {
+          color: #fff !important;
+          border: 1px solid #fff;
+          border-radius: 50%;
+          padding: 14px;
+        }
+      }
+    }
+
+    .footerBoxLinkBox {
+      gap: 16px;
+      position: relative;
+
+      .footerBoxLink {
+        font-weight: 700;
+        color: #fff;
+        font-size: 18px !important;
+      }
+    }
+  }
+
+  .footerBox * {
+    color: #ffffff !important;
+  }
 }

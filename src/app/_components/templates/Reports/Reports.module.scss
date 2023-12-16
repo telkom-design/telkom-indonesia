@@ -32,6 +32,10 @@
       transition: all 0.2s linear !important;
       position: relative;
 
+      .reportsBoxCardsCardCopy {
+        flex-wrap: nowrap;
+      }
+
       .reportsBoxCardsCardStats {
         position: relative;
         z-index: 1;

@@ -39,7 +39,7 @@ export const Reports = () => {
             className={styles.reportsBoxCardsCard}
             height="min-content"
           >
-            <Flex alignY="center">
+            <Flex alignY="center" className={styles.reportsBoxCardsCardCopy}>
               <Box
                 mr="24px"
                 padding="14px"
