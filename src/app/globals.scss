@@ -41,7 +41,7 @@ main {
     [full-width-end];
 }
 main > :not(.full-width) {
-  grid-column: content;
+  grid-column: content !important;
 }
 main > .full-width {
   grid-column: full-width;

@@ -6,11 +6,11 @@ import {
 } from "@tabler/icons-react";
 
 // atoms
-import { Box, Flex, Text, Anchor, Image, Divider, Button } from "../../atoms";
+import { Anchor, Box, Button, Divider, Flex, Image, Text } from "../../atoms";
 
 export const News = () => {
   return (
-    <Box className={`${styles.newsBox}`} padding="56px 0">
+    <Box className={`${styles.newsBox}`} margin="56px 0">
       <Flex
         direction="column"
         radius="24px"
@@ -60,6 +60,20 @@ export const News = () => {
         <Box width="268px" height="auto" className={styles.newsBoxNewsCard}>
           <Box className={styles.newsBoxNewsCardImage} mb="24px">
             <Image src="/news-image.svg" width="267px" height="184px" />
+            <Image
+              src="/news-card-mask.svg"
+              width="183px"
+              height="64px"
+              className={styles.newsBoxNewsCardImageMask}
+            />
+            <Text
+              className={styles.newsBoxNewsCardImageDate}
+              as="p"
+              weight="400"
+              color="tertiary500"
+            >
+              25 December 2023
+            </Text>
           </Box>
 
           <Box style={{ whiteSpace: "break-spaces" }}>
@@ -89,6 +103,20 @@ export const News = () => {
         <Box width="268px" height="auto" className={styles.newsBoxNewsCard}>
           <Box className={styles.newsBoxNewsCardImage} mb="24px">
             <Image src="/news-image.svg" width="267px" height="184px" />
+            <Image
+              src="/news-card-mask.svg"
+              width="183px"
+              height="64px"
+              className={styles.newsBoxNewsCardImageMask}
+            />
+            <Text
+              className={styles.newsBoxNewsCardImageDate}
+              as="p"
+              weight="400"
+              color="tertiary500"
+            >
+              25 December 2023
+            </Text>
           </Box>
 
           <Box style={{ whiteSpace: "break-spaces" }}>
@@ -119,6 +147,20 @@ export const News = () => {
         <Box width="268px" height="auto" className={styles.newsBoxNewsCard}>
           <Box className={styles.newsBoxNewsCardImage} mb="24px">
             <Image src="/news-image.svg" width="267px" height="184px" />
+            <Image
+              src="/news-card-mask.svg"
+              width="183px"
+              height="64px"
+              className={styles.newsBoxNewsCardImageMask}
+            />
+            <Text
+              className={styles.newsBoxNewsCardImageDate}
+              as="p"
+              weight="400"
+              color="tertiary500"
+            >
+              25 December 2023
+            </Text>
           </Box>
 
           <Box style={{ whiteSpace: "break-spaces" }}>
@@ -149,6 +191,20 @@ export const News = () => {
         <Box width="268px" height="auto" className={styles.newsBoxNewsCard}>
           <Box className={styles.newsBoxNewsCardImage} mb="24px">
             <Image src="/news-image.svg" width="267px" height="184px" />
+            <Image
+              src="/news-card-mask.svg"
+              width="183px"
+              height="64px"
+              className={styles.newsBoxNewsCardImageMask}
+            />
+            <Text
+              className={styles.newsBoxNewsCardImageDate}
+              as="p"
+              weight="400"
+              color="tertiary500"
+            >
+              25 December 2023
+            </Text>
           </Box>
 
           <Box style={{ whiteSpace: "break-spaces" }}>
@@ -178,6 +234,20 @@ export const News = () => {
         <Box width="268px" height="auto" className={styles.newsBoxNewsCard}>
           <Box className={styles.newsBoxNewsCardImage} mb="24px">
             <Image src="/news-image.svg" width="267px" height="184px" />
+            <Image
+              src="/news-card-mask.svg"
+              width="183px"
+              height="64px"
+              className={styles.newsBoxNewsCardImageMask}
+            />
+            <Text
+              className={styles.newsBoxNewsCardImageDate}
+              as="p"
+              weight="400"
+              color="tertiary500"
+            >
+              25 December 2023
+            </Text>
           </Box>
 
           <Box style={{ whiteSpace: "break-spaces" }}>
