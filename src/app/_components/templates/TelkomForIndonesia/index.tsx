@@ -14,7 +14,7 @@ export const TelkomForIndonesia = () => {
         <Image fit="cover" src="/tfi-one.svg" width="100%" height="auto" />
       </Box>
 
-      <Box width="50%" padding="48px 56px">
+      <Box width="50%" height="min-content" padding="48px 56px">
         <Text as="h2" mb="16px">
           Telkom for Indonesia
         </Text>
@@ -34,7 +34,7 @@ export const TelkomForIndonesia = () => {
             </Text>
           </Box>
 
-          <Box padding="16px 24px">
+          <Box padding="16px 24px" margin="1rem 0">
             <Text as="h4" color="tertiary400">
               170.000+ km Optic Fibre in Indonesia and Abroad
             </Text>
