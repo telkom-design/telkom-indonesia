@@ -6,11 +6,11 @@ import {
 } from "@tabler/icons-react";
 
 // atoms
-import { Box, Flex, Text, Anchor, Image, Divider, Button } from "../../atoms";
+import { Anchor, Box, Button, Divider, Flex, Image, Text } from "../../atoms";
 
 export const News = () => {
   return (
-    <Box className={`${styles.newsBox}`} padding="56px 0">
+    <Box className={`${styles.newsBox}`} margin="56px 0">
       <Flex
         direction="column"
         radius="24px"
