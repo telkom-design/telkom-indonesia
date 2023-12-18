@@ -8,13 +8,36 @@
     [content-end]
     minmax(var(--padding-inline), 1fr)
     [full-width-end];
-}
-.navigationGrid > :not(.full-width) {
-  grid-column: content;
-}
 
-.navigationBox {
-  margin-top: 1rem;
-  background-color: #f7f7f7 !important;
-  border-radius: 1.25rem !important;
+  > :not(.full-width) {
+    grid-column: content;
+  }
+
+  .navigationLinksDesktop {
+    display: flex;
+    gap: 8px;
+
+    > a {
+      padding: 12px 16px;
+      border-radius: 8px;
+      color: #667085;
+      font-size: 1rem;
+      position: relative;
+
+      > svg {
+        transform: rotate(0deg);
+        transition: all 0.2s ease-in-out;
+      }
+    }
+
+    > a:hover {
+      color: #e42313 !important;
+      text-decoration: none !important;
+      background-color: #f2f4f7;
+
+      > svg {
+        transform: rotate(180deg);
+      }
+    }
+  }
 }
