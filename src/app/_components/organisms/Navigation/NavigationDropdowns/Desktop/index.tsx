@@ -38,7 +38,7 @@ export const DesktopDropdownNavigation = (props: {
         mt="24px"
       >
         {props.items.map(({ icon, title, description }) => (
-          <Anchor>
+          <Anchor key={title}>
             <Flex padding="12px">
               <DropdownMenuIcon icon={icon} />
 
