@@ -5,16 +5,16 @@ export const TelkomForIndonesia = () => {
   return (
     <Flex
       direction="row"
-      style={{ rowGap: "56px", overflow: "hidden" }}
+      style={{ rowGap: "56px", overflow: "hidden", height: "636px" }}
       radius="32px"
       background="tertiary50"
       margin="56px 0"
     >
-      <Box width="50%">
-        <Image fit="cover" src="/tfi-one.svg" width="100%" height="auto" />
+      <Box width="50%" height="100%">
+        <Image fit="cover" src="/tfi-one.svg" width="100%" height="100%" />
       </Box>
 
-      <Box width="50%" height="min-content" padding="48px 56px">
+      <Box width="50%" height="min-content" margin="auto 0" padding="48px 56px">
         <Text as="h2" mb="16px">
           Telkom for Indonesia
         </Text>

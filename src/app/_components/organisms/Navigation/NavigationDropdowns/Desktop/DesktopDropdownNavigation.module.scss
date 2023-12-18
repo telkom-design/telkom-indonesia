@@ -1,0 +1,11 @@
+.DesktopDropdownNavigation {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 48px;
+
+  > div a:hover {
+    text-decoration: none !important;
+    background-color: #f9fafb;
+  }
+}
