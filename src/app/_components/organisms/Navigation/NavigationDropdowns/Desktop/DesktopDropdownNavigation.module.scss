@@ -3,6 +3,7 @@
   left: 50%;
   transform: translateX(-50%);
   top: 48px;
+  z-index: 2;
 
   > div a:hover {
     text-decoration: none !important;

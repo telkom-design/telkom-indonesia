@@ -24,11 +24,6 @@ import {
   ESG,
 } from "@/app/_constants";
 
-const Navbar = dynamic(
-  () => import("@legion-ui/core").then((component) => component.Navbar),
-  { ssr: false }
-);
-
 export const Navigation = () => {
   const [toggleDropdownNavigation, setToggleDropdownNavigation] = useState("");
 
@@ -128,6 +123,14 @@ export const Navigation = () => {
           />
         </Box>
       </Flex>
+
+      {toggleDropdownNavigation !== "" && (
+        <Box
+          background="#000"
+          width="100%"
+          className={styles.navigationGridOverlay}
+        ></Box>
+      )}
     </Box>
   );
 };

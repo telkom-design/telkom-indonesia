@@ -20,8 +20,6 @@ const DropdownMenuIcon = ({ icon }: { icon: string }) => {
 export const DesktopDropdownNavigation = (props: {
   items: DesktopDropdownNavigation[];
 }) => {
-  console.log({ items: props.items });
-
   return (
     <Box
       width="20rem"

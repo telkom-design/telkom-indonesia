@@ -31,9 +31,15 @@
 
 .subsidiariesCompanyBoxScrollInner {
   display: flex;
-  flex-wrap: wrap;
+  // flex-wrap: wrap;
+  // justify-content: center;
   gap: 24px;
-  justify-content: center;
+}
+
+.subsidiariesCompanyBox[data-animated="false"]
+  .subsidiariesCompanyBoxScrollInner {
+  animation: scroll 0s linear infinite paused;
+  animation-play-state: paused;
 }
 
 .subsidiariesCompanyBox[data-animated="true"] {
@@ -42,15 +48,14 @@
 
 .subsidiariesCompanyBox[data-animated="true"]
   .subsidiariesCompanyBoxScrollInner {
-  gap: 24px;
   display: flex;
   flex-wrap: nowrap !important;
-  animation: scroll 8s linear infinite;
+  animation: scroll 12s linear infinite running;
   width: max-content;
 }
 
 @keyframes scroll {
   to {
-    transform: translateX(calc(-50% - 0.5rem));
+    transform: translate(calc(-50% - 12px));
   }
 }
