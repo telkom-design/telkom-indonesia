@@ -10,35 +10,22 @@ import { IconChevronDown } from "@tabler/icons-react";
 import { IconSearch } from "@tabler/icons-react";
 
 // atoms
-import { Box, Flex, Button, Image, Select, Anchor } from "../../atoms";
+import { Box, Flex, Button, Image, Text, Anchor } from "../../atoms";
 
 // components
 import { DesktopDropdownNavigation } from "./NavigationDropdowns/Desktop";
 
 // constans
-import {
-  ABOUT_US,
-  SOLUTIONS,
-  INVESTOR_RELATIONS,
-  NEWS_AND_RESOURCES,
-  ESG,
-} from "@/app/_constants";
+import { ABOUT_US, SOLUTIONS, INVESTOR_RELATIONS, NEWS_AND_RESOURCES, ESG } from "@/app/_constants";
 
 export const Navigation = () => {
   const [toggleDropdownNavigation, setToggleDropdownNavigation] = useState("");
 
   return (
     <Box className={styles.navigationGrid}>
-      <Flex
-        padding="16px"
-        alignX="space-between"
-        alignY="center"
-        radius="1.25rem"
-        mt="1rem"
-        background="tertiary50"
-      >
+      <Flex padding="16px" alignX="space-between" alignY="center" radius="1.25rem" mt="1rem" background="tertiary50">
         <Anchor href="/">
-          <Image src="/telkom-logo.svg" width="140px" height="32px" />
+          <Image src="/telkom-logo.svg" width="140px" height="32px" alt="telkom indonesia logo" />
         </Anchor>
 
         <nav className={styles.navigationLinksDesktop}>
@@ -48,9 +35,7 @@ export const Navigation = () => {
             href=""
           >
             About Us <IconChevronDown size={20} />
-            {toggleDropdownNavigation === "about-us" && (
-              <DesktopDropdownNavigation items={ABOUT_US} />
-            )}
+            {toggleDropdownNavigation === "about-us" && <DesktopDropdownNavigation items={ABOUT_US} />}
           </Anchor>
           <Anchor
             onMouseEnter={() => setToggleDropdownNavigation("solutions")}
@@ -58,14 +43,10 @@ export const Navigation = () => {
             href=""
           >
             Solutions <IconChevronDown size={20} />
-            {toggleDropdownNavigation === "solutions" && (
-              <DesktopDropdownNavigation items={SOLUTIONS} />
-            )}
+            {toggleDropdownNavigation === "solutions" && <DesktopDropdownNavigation items={SOLUTIONS} />}
           </Anchor>
           <Anchor
-            onMouseEnter={() =>
-              setToggleDropdownNavigation("investor_relations")
-            }
+            onMouseEnter={() => setToggleDropdownNavigation("investor_relations")}
             onMouseLeave={() => setToggleDropdownNavigation("")}
             href=""
           >
@@ -75,9 +56,7 @@ export const Navigation = () => {
             )}
           </Anchor>
           <Anchor
-            onMouseEnter={() =>
-              setToggleDropdownNavigation("news_and_resources")
-            }
+            onMouseEnter={() => setToggleDropdownNavigation("news_and_resources")}
             onMouseLeave={() => setToggleDropdownNavigation("")}
             href=""
           >
@@ -92,44 +71,57 @@ export const Navigation = () => {
             href=""
           >
             ESG <IconChevronDown size={20} />
-            {toggleDropdownNavigation === "esg" && (
-              <DesktopDropdownNavigation items={ESG} />
-            )}
+            {toggleDropdownNavigation === "esg" && <DesktopDropdownNavigation items={ESG} />}
           </Anchor>
           <Anchor href="">Careers</Anchor>
         </nav>
 
-        <Box className={`${base.flex} ${base.gap_3}`}>
-          <Button
-            iconLeft={<IconSearch size={20} />}
-            variant="soft"
-            color="tertiary"
-          />
+        <Flex className={styles.navigationLinksDesktop}>
+          <Button iconLeft={<IconSearch size={20} />} variant="soft" color="tertiary" />
 
-          <Select
-            onChange={function noRefCheck() {}}
-            options={[
-              {
-                label: "Green",
-                value: "green",
-              },
-              {
-                label: "Blue",
-                value: "blue",
-              },
-            ]}
-            placeholder="Language"
-            variant="inline"
-          />
-        </Box>
+          <Anchor
+            style={{ position: "relative" }}
+            onMouseEnter={() => setToggleDropdownNavigation("language")}
+            onMouseLeave={() => setToggleDropdownNavigation("")}
+          >
+            Language <IconChevronDown size={20} />
+            {toggleDropdownNavigation === "language" && (
+              <Box width="auto" height="auto" className={styles.DesktopDropdownNavigation}>
+                <Box
+                  shadow="0px 4px 6px -2px rgba(16, 24, 40, .40)"
+                  radius="24px"
+                  padding="12px"
+                  width="100%"
+                  background="#fff"
+                  mt="24px"
+                >
+                  <Anchor>
+                    <Flex padding="12px">
+                      <Box width="80%">
+                        <Text size="16px" color="#101828" as="p" mb="4px">
+                          English
+                        </Text>
+                      </Box>
+                    </Flex>
+                  </Anchor>
+                  <Anchor>
+                    <Flex padding="12px">
+                      <Box width="80%">
+                        <Text size="16px" color="#101828" as="p" mb="4px">
+                          Bahasa
+                        </Text>
+                      </Box>
+                    </Flex>
+                  </Anchor>
+                </Box>
+              </Box>
+            )}
+          </Anchor>
+        </Flex>
       </Flex>
 
       {toggleDropdownNavigation !== "" && (
-        <Box
-          background="#000"
-          width="100%"
-          className={styles.navigationGridOverlay}
-        ></Box>
+        <Box background="#000" width="100%" className={styles.navigationGridOverlay}></Box>
       )}
     </Box>
   );
