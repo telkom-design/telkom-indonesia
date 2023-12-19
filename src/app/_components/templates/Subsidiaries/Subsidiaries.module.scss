@@ -11,6 +11,8 @@
     minmax(var(--padding-inline), 1fr)
     [full-width-end];
   grid-template-rows: 1fr 1f;
+  // max-width: 1800px;
+  // margin: 0 auto;
 
   > .content {
     grid-column: content-start / content-end;
@@ -18,10 +20,37 @@
 }
 
 .subsidiariesCompanyBox {
-  gap: 24px;
-  flex-wrap: nowrap !important;
+  width: 100% !important;
+  background: #f9fafb;
+  padding: 8px 0 96px 0;
 
   .subsidiariesCompanyBoxCard {
     min-width: 314px;
+  }
+}
+
+.subsidiariesCompanyBoxScrollInner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+}
+
+.subsidiariesCompanyBox[data-animated="true"] {
+  overflow: hidden;
+}
+
+.subsidiariesCompanyBox[data-animated="true"]
+  .subsidiariesCompanyBoxScrollInner {
+  gap: 24px;
+  display: flex;
+  flex-wrap: nowrap !important;
+  animation: scroll 8s linear infinite;
+  width: max-content;
+}
+
+@keyframes scroll {
+  to {
+    transform: translateX(calc(-50% - 0.5rem));
   }
 }
