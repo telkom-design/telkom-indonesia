@@ -40,4 +40,30 @@
       }
     }
   }
+
+  .navigationGridOverlay {
+    position: absolute;
+    top: 96px;
+    grid-column: full-width;
+    opacity: 0.35;
+    z-index: 1;
+    min-height: 200vh !important;
+  }
+}
+
+.DesktopDropdownNavigation {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 48px;
+  z-index: 2;
+
+  > div a:hover {
+    text-decoration: none !important;
+    background-color: #f9fafb;
+  }
+
+  > div a:hover * {
+    color: red !important;
+  }
 }

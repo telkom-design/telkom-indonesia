@@ -2,6 +2,7 @@
 
 // templates
 import {
+  Hero,
   News,
   Reports,
   Subsidiaries,
@@ -11,6 +12,7 @@ import {
 export default function Home() {
   return (
     <main>
+      <Hero />
       <TelkomForIndonesia />
       <Subsidiaries />
       <Reports />
