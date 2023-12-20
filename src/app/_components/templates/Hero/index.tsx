@@ -73,6 +73,10 @@ export const Hero = () => {
             <span className="hero-carousel__counter__amount">1 / 5</span>
             <span className="hero-carousel__counter__indicator" style={{ width: 'calc(100% - 5)'}}></span>
           </div>
+          <Flex alignY='center' padding="24px 32px" radius="24px" className="hero-carousel__nav button-left-right button-left-right--prefix button-left-right--suffix">
+            <Button variant="outline" color='tertiary' iconLeft={<IconChevronLeft/>} />
+            <Button variant="outline" color='tertiary' iconLeft={<IconChevronRight/>} />
+          </Flex> 
         </div>
       </Box>
       <Box width="314px" style={{ position: 'relative'}}>
@@ -110,10 +114,6 @@ export const Hero = () => {
           <a href="#new-and-events">News & Events</a>
         </Box>
       </Box>
-      <Flex alignY='center' padding="24px 32px" radius="24px" mt="317px" mr="300px" className="button-left-right button-left-right--prefix button-left-right--suffix">
-        <Button variant="outline" color='tertiary' iconLeft={<IconChevronLeft/>} />
-        <Button variant="outline" color='tertiary' iconLeft={<IconChevronRight/>} />
-      </Flex> 
     </Flex>
   )
 }

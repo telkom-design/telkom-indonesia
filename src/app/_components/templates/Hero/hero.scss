@@ -53,7 +53,7 @@
     margin: 0;
     padding: 0;
     position: absolute;
-    right: 75px;
+    right: 74px;
     top: 340px;
     width: 79px;
     padding-bottom: 4px;
@@ -77,6 +77,13 @@
       height: 2px;
     }
   }
+
+  &__nav {
+    position: absolute;
+    right: -93.5px;
+    top: 317.5px;
+    z-index: 1;
+  }
 }
 
 .button-left-right {
@@ -96,12 +103,6 @@
     margin-left: -0.5px;
   }
 
-  &--prefix,
-  &--suffix {
-    position: absolute;
-    right: 0;
-  }
-
   &--prefix::before,
   &--suffix::after {
     content: "";
@@ -115,13 +116,13 @@
   &--prefix::before {
     background-image: url(/bg-nav-carousel.svg);
     background-position: left top;
-    left: -28px;
+    left: -27px;
   }
 
   &--suffix::after {
     background-image: url(/bg-nav-carousel.svg);
     background-position: right top;
-    right: -27px;
+    right: -26px;
     transform: rotateY(180deg);
   }
 }
