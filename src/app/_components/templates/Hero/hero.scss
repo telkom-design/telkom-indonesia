@@ -83,10 +83,34 @@
     right: -93.5px;
     top: 317.5px;
     z-index: 1;
+
+
+    &:before,
+    &::after {
+      content: "";
+      position: absolute;
+      background-size: contain;
+      width: 97px;
+      height: 121px;
+      top: -19px;
+    }
+
+    &::before {
+      background-image: url(/bg-nav-carousel.svg);
+      background-position: left top;
+      left: -27px;
+    }
+
+    &::after {
+      background-image: url(/bg-nav-carousel.svg);
+      background-position: right top;
+      right: -26px;
+      transform: rotateY(180deg);
+    }
   }
 }
 
-.button-left-right {
+.button-next-prev {
   button {
     z-index: 1;
   }
@@ -102,29 +126,6 @@
     border-top-left-radius: 0;
     margin-left: -0.5px;
   }
-
-  &--prefix::before,
-  &--suffix::after {
-    content: "";
-    position: absolute;
-    background-size: contain;
-    width: 97px;
-    height: 121px;
-    top: -19px;
-  }
-
-  &--prefix::before {
-    background-image: url(/bg-nav-carousel.svg);
-    background-position: left top;
-    left: -27px;
-  }
-
-  &--suffix::after {
-    background-image: url(/bg-nav-carousel.svg);
-    background-position: right top;
-    right: -26px;
-    transform: rotateY(180deg);
-  }
 }
 
 .hero-nav a {
@@ -137,9 +138,11 @@
   padding: 6px 0;
   margin: 4px;
   border-bottom: 0.5px solid var(--tertiary-300, #D0D5DD);
+  transition: all 0.3s ease;
 
   &:hover {
     background-color: #ebebeb;
     border-color: #E42313;
+    padding-left: 12px;
   }
 }

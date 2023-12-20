@@ -73,7 +73,7 @@ export const Hero = () => {
             <span className="hero-carousel__counter__amount">1 / 5</span>
             <span className="hero-carousel__counter__indicator" style={{ width: 'calc(100% - 5)'}}></span>
           </div>
-          <Flex alignY='center' padding="24px 32px" radius="24px" className="hero-carousel__nav button-left-right button-left-right--prefix button-left-right--suffix">
+          <Flex alignY='center' padding="24px 32px" radius="24px" className="button-next-prev hero-carousel__nav">
             <Button variant="outline" color='tertiary' iconLeft={<IconChevronLeft/>} />
             <Button variant="outline" color='tertiary' iconLeft={<IconChevronRight/>} />
           </Flex> 
