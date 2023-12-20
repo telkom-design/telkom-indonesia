@@ -1,8 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import dynamic from "next/dynamic";
-import base from "../../../_styles/Base.module.scss";
 import styles from "./Header.module.scss";
 import { IconChevronDown } from "@tabler/icons-react";
 
@@ -10,22 +8,42 @@ import { IconChevronDown } from "@tabler/icons-react";
 import { IconSearch } from "@tabler/icons-react";
 
 // atoms
-import { Box, Flex, Button, Image, Text, Anchor } from "../../atoms";
+import { Anchor, Box, Button, Flex, Image, Text } from "../../atoms";
 
 // components
 import { DesktopDropdownNavigation } from "./NavigationDropdowns/Desktop";
+import { NavigationButtonMenu } from "./NavigationButtonMenu";
 
 // constans
-import { ABOUT_US, SOLUTIONS, INVESTOR_RELATIONS, NEWS_AND_RESOURCES, ESG } from "@/app/_constants";
+import {
+  ABOUT_US,
+  ESG,
+  INVESTOR_RELATIONS,
+  NEWS_AND_RESOURCES,
+  SOLUTIONS,
+} from "@/app/_constants";
 
 export const Navigation = () => {
   const [toggleDropdownNavigation, setToggleDropdownNavigation] = useState("");
+  const [toggleDropdownSearch, setToggleDropdownSearch] = useState(false);
 
   return (
     <Box className={styles.navigationGrid}>
-      <Flex padding="16px" alignX="space-between" alignY="center" radius="1.25rem" mt="1rem" background="tertiary50">
+      <Flex
+        padding="16px"
+        alignX="space-between"
+        alignY="center"
+        radius="1.25rem"
+        mt="1rem"
+        background="tertiary50"
+      >
         <Anchor href="/">
-          <Image src="/telkom-logo.svg" width="140px" height="32px" alt="telkom indonesia logo" />
+          <Image
+            src="/telkom-logo.svg"
+            width="140px"
+            height="32px"
+            alt="telkom indonesia logo"
+          />
         </Anchor>
 
         <nav className={styles.navigationLinksDesktop}>
@@ -35,7 +53,9 @@ export const Navigation = () => {
             href=""
           >
             About Us <IconChevronDown size={20} />
-            {toggleDropdownNavigation === "about-us" && <DesktopDropdownNavigation items={ABOUT_US} />}
+            {toggleDropdownNavigation === "about-us" && (
+              <DesktopDropdownNavigation items={ABOUT_US} />
+            )}
           </Anchor>
           <Anchor
             onMouseEnter={() => setToggleDropdownNavigation("solutions")}
@@ -43,10 +63,13 @@ export const Navigation = () => {
             href=""
           >
             Solutions <IconChevronDown size={20} />
-            {toggleDropdownNavigation === "solutions" && <DesktopDropdownNavigation items={SOLUTIONS} />}
+            {toggleDropdownNavigation === "solutions" && (
+              <DesktopDropdownNavigation items={SOLUTIONS} />
+            )}
           </Anchor>
           <Anchor
-            onMouseEnter={() => setToggleDropdownNavigation("investor_relations")}
+            onMouseEnter={() =>
+              setToggleDropdownNavigation("investor_relations")}
             onMouseLeave={() => setToggleDropdownNavigation("")}
             href=""
           >
@@ -56,7 +79,8 @@ export const Navigation = () => {
             )}
           </Anchor>
           <Anchor
-            onMouseEnter={() => setToggleDropdownNavigation("news_and_resources")}
+            onMouseEnter={() =>
+              setToggleDropdownNavigation("news_and_resources")}
             onMouseLeave={() => setToggleDropdownNavigation("")}
             href=""
           >
@@ -71,13 +95,20 @@ export const Navigation = () => {
             href=""
           >
             ESG <IconChevronDown size={20} />
-            {toggleDropdownNavigation === "esg" && <DesktopDropdownNavigation items={ESG} />}
+            {toggleDropdownNavigation === "esg" && (
+              <DesktopDropdownNavigation items={ESG} />
+            )}
           </Anchor>
           <Anchor href="">Careers</Anchor>
         </nav>
 
         <Flex className={styles.navigationLinksDesktop}>
-          <Button iconLeft={<IconSearch size={20} />} variant="soft" color="tertiary" />
+          <Button
+            iconLeft={<IconSearch size={20} />}
+            variant="soft"
+            color="tertiary"
+            onClick={() => setToggleDropdownSearch((prevValue) => !prevValue)}
+          />
 
           <Anchor
             style={{ position: "relative" }}
@@ -86,7 +117,11 @@ export const Navigation = () => {
           >
             Language <IconChevronDown size={20} />
             {toggleDropdownNavigation === "language" && (
-              <Box width="auto" height="auto" className={styles.DesktopDropdownNavigation}>
+              <Box
+                width="auto"
+                height="auto"
+                className={styles.DesktopDropdownNavigation}
+              >
                 <Box
                   shadow="0px 4px 6px -2px rgba(16, 24, 40, .40)"
                   radius="24px"
@@ -121,7 +156,24 @@ export const Navigation = () => {
       </Flex>
 
       {toggleDropdownNavigation !== "" && (
-        <Box background="#000" width="100%" className={styles.navigationGridOverlay}></Box>
+        <Box
+          background="#000"
+          width="100%"
+          className={styles.navigationGridOverlay}
+        >
+        </Box>
+      )}
+
+      {toggleDropdownSearch && (
+        <>
+          <Box
+            background="#000"
+            width="100%"
+            className={styles.navigationGridSearchOverlay}
+          >
+          </Box>
+          <NavigationButtonMenu toggleSearch={setToggleDropdownSearch} />
+        </>
       )}
     </Box>
   );

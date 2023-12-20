@@ -1,0 +1,19 @@
+.NavigationButtonMenuBox {
+  position: fixed;
+  z-index: 2;
+  top: 120px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  .NavigationButtonMenuBoxSearchField {
+   flex-grow: 1; 
+  }
+
+  .NavigationButtonMenuBoxRecommendations {
+    border-bottom: 0.5px solid #EAECF0;
+  } 
+  
+  .NavigationButtonMenuBoxRecommendationsTopBorder {
+    border-top: 0.5px solid #EAECF0;
+  }
+}
