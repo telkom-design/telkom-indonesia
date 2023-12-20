@@ -18,6 +18,10 @@
     overflow: hidden;
     position: relative;
 
+    img {
+      width: 100%;
+    }
+
     &::after {
       content: "";
       height: 216px;
