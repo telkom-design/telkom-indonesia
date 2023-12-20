@@ -3,19 +3,14 @@ import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 
 // atoms
-import { Box, Flex, Image, Text } from "../../atoms";
+import { Box, Image, Text } from "../../atoms";
+
+// hooks
+import { useInfiniteAnimationHook } from "@/app/_hooks";
 
 export const Subsidiaries = () => {
-  const [duplicatedScrollerInnerContent, setDuplicatedScrollerInnerContent] =
-    useState<Node[]>([]);
-
-  const scrollerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      scrollerRef.current?.setAttribute("data-animated", "true");
-    }
-  }, []);
+  const { scrollerRef, handleAnimationEnter, handleAnimationLeave } =
+    useInfiniteAnimationHook();
 
   return (
     <>
@@ -76,9 +71,14 @@ export const Subsidiaries = () => {
         ref={scrollerRef}
         // background="tertiary50"
         // padding="8px 0 96px 0"
+
         className={`full-width ${styles.subsidiariesCompanyBox}`}
       >
-        <div className={styles.subsidiariesCompanyBoxScrollInner}>
+        <div
+          onMouseEnter={handleAnimationEnter}
+          onMouseLeave={handleAnimationLeave}
+          className={styles.subsidiariesCompanyBoxScrollInner}
+        >
           <Box
             padding="48px 24px"
             background="#fff"
@@ -94,8 +94,7 @@ export const Subsidiaries = () => {
             />
 
             <Text as="p" color="tertiary500">
-              All these have made us as a nation to rise together—not only to
-              deliver economic recovery, but beyond that.
+              1
             </Text>
           </Box>
 
@@ -114,8 +113,7 @@ export const Subsidiaries = () => {
             />
 
             <Text as="p" color="tertiary500">
-              All these have made us as a nation to rise together—not only to
-              deliver economic recovery, but beyond that.
+              2
             </Text>
           </Box>
 
@@ -134,8 +132,7 @@ export const Subsidiaries = () => {
             />
 
             <Text as="p" color="tertiary500">
-              All these have made us as a nation to rise together—not only to
-              deliver economic recovery, but beyond that.
+              3
             </Text>
           </Box>
 
@@ -154,8 +151,7 @@ export const Subsidiaries = () => {
             />
 
             <Text as="p" color="tertiary500">
-              All these have made us as a nation to rise together—not only to
-              deliver economic recovery, but beyond that.
+              4
             </Text>
           </Box>
 
@@ -174,13 +170,11 @@ export const Subsidiaries = () => {
             />
 
             <Text as="p" color="tertiary500">
-              All these have made us as a nation to rise together—not only to
-              deliver economic recovery, but beyond that.
+              5
             </Text>
           </Box>
 
           <Box
-            aria-hidden="true"
             padding="48px 24px"
             background="#fff"
             radius="24px"
@@ -195,8 +189,7 @@ export const Subsidiaries = () => {
             />
 
             <Text as="p" color="tertiary500">
-              All these have made us as a nation to rise together—not only to
-              deliver economic recovery, but beyond that.
+              6
             </Text>
           </Box>
 
@@ -217,8 +210,7 @@ export const Subsidiaries = () => {
             />
 
             <Text as="p" color="tertiary500">
-              All these have made us as a nation to rise together—not only to
-              deliver economic recovery, but beyond that.
+              7
             </Text>
           </Box>
 
@@ -238,8 +230,7 @@ export const Subsidiaries = () => {
             />
 
             <Text as="p" color="tertiary500">
-              All these have made us as a nation to rise together—not only to
-              deliver economic recovery, but beyond that.
+              8
             </Text>
           </Box>
 
@@ -259,8 +250,7 @@ export const Subsidiaries = () => {
             />
 
             <Text as="p" color="tertiary500">
-              All these have made us as a nation to rise together—not only to
-              deliver economic recovery, but beyond that.
+              9
             </Text>
           </Box>
 
@@ -280,8 +270,7 @@ export const Subsidiaries = () => {
             />
 
             <Text as="p" color="tertiary500">
-              All these have made us as a nation to rise together—not only to
-              deliver economic recovery, but beyond that.
+              10
             </Text>
           </Box>
 
@@ -301,8 +290,7 @@ export const Subsidiaries = () => {
             />
 
             <Text as="p" color="tertiary500">
-              All these have made us as a nation to rise together—not only to
-              deliver economic recovery, but beyond that.
+              11
             </Text>
           </Box>
 
@@ -322,8 +310,7 @@ export const Subsidiaries = () => {
             />
 
             <Text as="p" color="tertiary500">
-              All these have made us as a nation to rise together—not only to
-              deliver economic recovery, but beyond that.
+              12
             </Text>
           </Box>
         </div>

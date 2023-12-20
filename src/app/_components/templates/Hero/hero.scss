@@ -1,0 +1,148 @@
+
+.hero-carousel {
+  position: relative;
+
+  // reuse
+  &__img,
+  &__text {
+    position: relative;
+
+    li:not(.active) {
+      display: none;
+    }
+  }
+
+  &__img {
+    line-height: 0;
+    border-radius: 24px;
+    overflow: hidden;
+    position: relative;
+
+    &::after {
+      content: "";
+      height: 216px;
+      width: 100%;
+      left: 0;
+      bottom: 0;
+      position: absolute;
+      background: linear-gradient(180deg, rgba(33, 33, 33, 0.00) 0%, rgba(33, 33, 33, 0.59) 54.69%, rgba(33, 33, 33, 0.70) 100%);
+    }
+  }
+
+  &__text {
+    position: absolute;
+    bottom: 19px;
+    left: 87px;
+  }
+
+  &--landscape {
+    .hero-carousel__text {
+      padding-left: 56px;
+      position: relative;
+      left: 0;
+    }
+      
+    .hero-carousel__text::before {
+      height: 300px;
+    }
+  }
+
+  &__counter {
+    display: inline-flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    right: 74px;
+    top: 340px;
+    width: 79px;
+    padding-bottom: 4px;
+    border-bottom: 2px solid #ffffff;
+    
+    &__amount {
+      color: #ffffff;
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 155.556%;
+      width: 79px;
+    }
+
+    &__indicator {
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      z-index: 1;
+      background: #E42313;
+      width: 16px;
+      height: 2px;
+    }
+  }
+
+  &__nav {
+    position: absolute;
+    right: -93.5px;
+    top: 317.5px;
+    z-index: 1;
+
+
+    &:before,
+    &::after {
+      content: "";
+      position: absolute;
+      background-size: contain;
+      width: 97px;
+      height: 121px;
+      top: -19px;
+    }
+
+    &::before {
+      background-image: url(/bg-nav-carousel.svg);
+      background-position: left top;
+      left: -27px;
+    }
+
+    &::after {
+      background-image: url(/bg-nav-carousel.svg);
+      background-position: right top;
+      right: -26px;
+      transform: rotateY(180deg);
+    }
+  }
+}
+
+.button-next-prev {
+  button {
+    z-index: 1;
+  }
+
+  button:first-of-type {
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    margin-right: -0.5px;
+  }
+
+  button:last-of-type {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    margin-left: -0.5px;
+  }
+}
+
+.hero-nav a {
+  text-decoration: none;
+  color: #667085;
+  display: block;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 150%;
+  padding: 6px 0;
+  margin: 4px;
+  border-bottom: 0.5px solid var(--tertiary-300, #D0D5DD);
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: #ebebeb;
+    border-color: #E42313;
+    padding-left: 12px;
+  }
+}
