@@ -44,7 +44,7 @@ export const TelkomInYears = () => {
                   <Text color="#fff" height="1.5" block>NeutraDC</Text>
                   <Text color="#fff" height="1.5" weight="700">Batam, 2022</Text>
                 </Box>
-                <Flex alignX="space-between" alignY="center" className="tiy-preview__options" padding="17px" background="#ffffff">
+                <Flex alignX="space-between" width="50%" alignY="center" className="tiy-preview__options" padding="17px" background="#ffffff">
                   <Image className="active" width={88} height={88} src="/home/telkom-in-year-2023-1-small.jpg" alt="/home/telkom-in-year-2023-1-small" />
                   <Image width={88} height={88} src="/home/telkom-in-year-2023-1-small.jpg" alt="/home/telkom-in-year-2023-1-small" />
                   <Image width={88} height={88} src={'/home/telkom-in-year-2023-1-small.jpg'} alt="/home/telkom-in-year-2023-1-small" />
