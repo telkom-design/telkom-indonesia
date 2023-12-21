@@ -7,6 +7,7 @@ import {
   Reports,
   Subsidiaries,
   TelkomForIndonesia,
+  TelkomInYears,
 } from "./_components/templates";
 
 export default function Home() {
@@ -14,6 +15,7 @@ export default function Home() {
     <main>
       <Hero />
       <TelkomForIndonesia />
+      <TelkomInYears />
       <Subsidiaries />
       <Reports />
       <News />

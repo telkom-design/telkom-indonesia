@@ -8,6 +8,9 @@ import { Box, Image, Text } from "../../atoms";
 // hooks
 import { useInfiniteAnimationHook } from "@/app/_hooks";
 
+// constants
+import { SUBSIDIARIES } from "@/app/_constants";
+
 export const Subsidiaries = () => {
   const { scrollerRef, handleAnimationEnter, handleAnimationLeave } =
     useInfiniteAnimationHook();
@@ -47,12 +50,14 @@ export const Subsidiaries = () => {
                 <Text as="h4" color="tertiary400">
                   100+ Partners & branch worldwide
                 </Text>
-                {/*
+                {
+                  /*
             <Text as="p">
               Telkom provide your business the most extensive way to reach more
               than 120 million users.
             </Text>
-            */}
+            */
+                }
               </Box>
             </Box>
           </Box>
@@ -71,7 +76,7 @@ export const Subsidiaries = () => {
         ref={scrollerRef}
         // background="tertiary50"
         // padding="8px 0 96px 0"
-
+        data-animated="true"
         className={`full-width ${styles.subsidiariesCompanyBox}`}
       >
         <div
@@ -79,240 +84,53 @@ export const Subsidiaries = () => {
           onMouseLeave={handleAnimationLeave}
           className={styles.subsidiariesCompanyBoxScrollInner}
         >
-          <Box
-            padding="48px 24px"
-            background="#fff"
-            radius="24px"
-            width="314px"
-            className={styles.subsidiariesCompanyBoxCard}
-          >
-            <Image
-              src="/telkom-subsidiaries.svg"
-              width="194px"
-              height="auto"
-              margin="0 0 72px 0"
-            />
+          {SUBSIDIARIES.map((subsidiary) => (
+            <Box
+              key={subsidiary.logo}
+              padding="48px 24px"
+              background="#fff"
+              radius="24px"
+              width="314px"
+              className={styles.subsidiariesCompanyBoxCard}
+            >
+              <Image
+                src={subsidiary.logo}
+                width="min-content"
+                height="52px"
+                margin="0 0 72px 0"
+                alt={subsidiary.logo}
+              />
 
-            <Text as="p" color="tertiary500">
-              1
-            </Text>
-          </Box>
-
-          <Box
-            padding="48px 24px"
-            background="#fff"
-            radius="24px"
-            width="314px"
-            className={styles.subsidiariesCompanyBoxCard}
-          >
-            <Image
-              src="/telkom-subsidiaries.svg"
-              width="194px"
-              height="auto"
-              margin="0 0 72px 0"
-            />
-
-            <Text as="p" color="tertiary500">
-              2
-            </Text>
-          </Box>
-
-          <Box
-            padding="48px 24px"
-            background="#fff"
-            radius="24px"
-            width="314px"
-            className={styles.subsidiariesCompanyBoxCard}
-          >
-            <Image
-              src="/telkom-subsidiaries.svg"
-              width="194px"
-              height="auto"
-              margin="0 0 72px 0"
-            />
-
-            <Text as="p" color="tertiary500">
-              3
-            </Text>
-          </Box>
-
-          <Box
-            padding="48px 24px"
-            background="#fff"
-            radius="24px"
-            width="314px"
-            className={styles.subsidiariesCompanyBoxCard}
-          >
-            <Image
-              src="/telkom-subsidiaries.svg"
-              width="194px"
-              height="auto"
-              margin="0 0 72px 0"
-            />
-
-            <Text as="p" color="tertiary500">
-              4
-            </Text>
-          </Box>
-
-          <Box
-            padding="48px 24px"
-            background="#fff"
-            radius="24px"
-            width="314px"
-            className={styles.subsidiariesCompanyBoxCard}
-          >
-            <Image
-              src="/telkom-subsidiaries.svg"
-              width="194px"
-              height="auto"
-              margin="0 0 72px 0"
-            />
-
-            <Text as="p" color="tertiary500">
-              5
-            </Text>
-          </Box>
-
-          <Box
-            padding="48px 24px"
-            background="#fff"
-            radius="24px"
-            width="314px"
-            className={styles.subsidiariesCompanyBoxCard}
-          >
-            <Image
-              src="/telkom-subsidiaries.svg"
-              width="194px"
-              height="auto"
-              margin="0 0 72px 0"
-            />
-
-            <Text as="p" color="tertiary500">
-              6
-            </Text>
-          </Box>
+              <Text as="p" color="tertiary500">
+                {subsidiary.description}
+              </Text>
+            </Box>
+          ))}
 
           {/* Hidden */}
-          <Box
-            aria-hidden="true"
-            padding="48px 24px"
-            background="#fff"
-            radius="24px"
-            width="314px"
-            className={styles.subsidiariesCompanyBoxCard}
-          >
-            <Image
-              src="/telkom-subsidiaries.svg"
-              width="194px"
-              height="auto"
-              margin="0 0 72px 0"
-            />
+          {SUBSIDIARIES.map((subsidiary) => (
+            <Box
+              aria-hidden="true"
+              key={subsidiary.logo}
+              padding="48px 24px"
+              background="#fff"
+              radius="24px"
+              width="314px"
+              className={styles.subsidiariesCompanyBoxCard}
+            >
+              <Image
+                src={subsidiary.logo}
+                width="min-content"
+                height="52px"
+                margin="0 0 72px 0"
+                alt={subsidiary.logo}
+              />
 
-            <Text as="p" color="tertiary500">
-              7
-            </Text>
-          </Box>
-
-          <Box
-            aria-hidden="true"
-            padding="48px 24px"
-            background="#fff"
-            radius="24px"
-            width="314px"
-            className={styles.subsidiariesCompanyBoxCard}
-          >
-            <Image
-              src="/telkom-subsidiaries.svg"
-              width="194px"
-              height="auto"
-              margin="0 0 72px 0"
-            />
-
-            <Text as="p" color="tertiary500">
-              8
-            </Text>
-          </Box>
-
-          <Box
-            aria-hidden="true"
-            padding="48px 24px"
-            background="#fff"
-            radius="24px"
-            width="314px"
-            className={styles.subsidiariesCompanyBoxCard}
-          >
-            <Image
-              src="/telkom-subsidiaries.svg"
-              width="194px"
-              height="auto"
-              margin="0 0 72px 0"
-            />
-
-            <Text as="p" color="tertiary500">
-              9
-            </Text>
-          </Box>
-
-          <Box
-            aria-hidden="true"
-            padding="48px 24px"
-            background="#fff"
-            radius="24px"
-            width="314px"
-            className={styles.subsidiariesCompanyBoxCard}
-          >
-            <Image
-              src="/telkom-subsidiaries.svg"
-              width="194px"
-              height="auto"
-              margin="0 0 72px 0"
-            />
-
-            <Text as="p" color="tertiary500">
-              10
-            </Text>
-          </Box>
-
-          <Box
-            aria-hidden="true"
-            padding="48px 24px"
-            background="#fff"
-            radius="24px"
-            width="314px"
-            className={styles.subsidiariesCompanyBoxCard}
-          >
-            <Image
-              src="/telkom-subsidiaries.svg"
-              width="194px"
-              height="auto"
-              margin="0 0 72px 0"
-            />
-
-            <Text as="p" color="tertiary500">
-              11
-            </Text>
-          </Box>
-
-          <Box
-            aria-hidden="true"
-            padding="48px 24px"
-            background="#fff"
-            radius="24px"
-            width="314px"
-            className={styles.subsidiariesCompanyBoxCard}
-          >
-            <Image
-              src="/telkom-subsidiaries.svg"
-              width="194px"
-              height="auto"
-              margin="0 0 72px 0"
-            />
-
-            <Text as="p" color="tertiary500">
-              12
-            </Text>
-          </Box>
+              <Text as="p" color="tertiary500">
+                {subsidiary.description}
+              </Text>
+            </Box>
+          ))}
         </div>
       </div>
     </>
