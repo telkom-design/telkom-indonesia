@@ -12,7 +12,7 @@ import {
 } from "@/app/_components/atoms";
 
 export const NavigationButtonMenu = (
-  { toggleSearch }: { toggleSearch: () => void },
+  { toggleSearch }: { toggleSearch: any },
 ) => {
   return (
     <Box
