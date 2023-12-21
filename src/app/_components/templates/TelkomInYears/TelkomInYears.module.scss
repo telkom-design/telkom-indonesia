@@ -1,0 +1,165 @@
+.telkomInYearsBox {
+  display: grid !important;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(3, min-content);
+  gap: 32px 0;
+  
+  .telkomInYearsBoxTitle {
+    grid-column: 1/7;
+    max-width: 554px;
+  }
+
+  .telkomInYearsBoxImageInfo {
+    grid-row: 2/3;
+    grid-column: 2/7;
+    border-top-left-radius: 24px;
+    border-bottom-left-radius: 24px;
+
+    > p:nth-child(2) {
+      max-width: 530px;
+    }
+  }
+
+  .telkomInYearsBoxImage {
+    grid-column: 7/13;
+    grid-row: 1/3;
+    overflow: hidden;
+    position: relative;
+
+    .telkomInYearsBoxImageMeta {
+      position: absolute;
+      left: 24px;
+      bottom: 24px;
+    }
+
+    .telkomInYearsBoxImageThumbs {
+      position: absolute;
+      right: 24px;
+      bottom: 24px;
+      gap: 12px;
+
+      > img {
+        cursor: pointer;
+        border-radius: 12px;
+        filter: grayscale(50%);
+      }
+
+      > img.active {
+        width: 80px;
+        height: 80px;
+        border: 4px solid #E42313;
+        filter: grayscale(0);
+      }
+    }
+  }
+
+  .telkomInYearsBoxYears {
+    grid-row: 2/4;
+    gap: 12px;
+    align-items: start;
+    margin-bottom: 52px;
+  }
+
+  .telkomInYearsBoxStats {
+    padding-top: 16px;
+    padding-bottom: 60px;
+    grid-column: 2/-1; 
+    position: relative;
+
+    
+    .telkomInYearsBoxStatsStart {
+      top: calc(25% - 6px); 
+      left: 0;
+      position: absolute;
+      text-align: center;
+
+      > p {
+        margin-top: 16px;
+      }
+    }
+    
+    .telkomInYearsBoxStatsEnd {
+      top: calc(25% - 6px); 
+      right: 0;
+      position: absolute;
+      text-align: center;
+
+      > p {
+        margin-top: 16px;
+      }
+    }
+
+    .telkomInYearsBoxStatsOne {
+      top: 50%; 
+      left: 182px;
+      transform: translateY(calc(-50% - 2px));
+      position: absolute;
+      text-align: center;
+
+      > p {
+        margin-top: 16px;
+      }
+    }
+    
+    .telkomInYearsBoxStatsTwo {
+      top: 50%; 
+      left: 303px;
+      transform: translateY(calc(-50% - 2px));
+      position: absolute;
+      text-align: center;
+
+      > p {
+        margin-top: 16px;
+      }
+    }
+    
+    .telkomInYearsBoxStatsThree {
+      top: 50%; 
+      left: 427px;
+      transform: translateY(calc(-50% - 2px));
+      position: absolute;
+      text-align: center;
+
+      > p {
+        margin-top: 16px;
+      }
+    }
+
+    // dynamic 
+    .telkomInYearsBoxStatsFour {
+      top: 50%; 
+      right: 543px;
+      transform: translateY(calc(-50% - 2px));
+      position: absolute;
+      text-align: center;
+
+      > p {
+        margin-top: 16px;
+      }  
+    }
+    
+    .telkomInYearsBoxStatsFive {
+      top: 50%; 
+      right: 114px;
+      transform: translateY(calc(-50% - 2px));
+      position: absolute;
+      text-align: center;
+
+      > p {
+        margin-top: 16px;
+      }
+    }
+    
+    .telkomInYearsBoxStatsSix {
+      top: 50%; 
+      right: 8px;
+      transform: translateY(calc(-50% - 2px));
+      position: absolute;
+      text-align: center;
+
+      > p {
+        margin-top: 16px;
+      }
+    }
+  }
+}

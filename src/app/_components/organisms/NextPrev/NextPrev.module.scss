@@ -1,0 +1,15 @@
+.nextPrevBox {
+  overflow: hidden;
+  width: max-content !important;
+  
+  .nextPrevBoxPrev {
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+  }
+
+  .nextPrevBoxPrevNext {
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+  }
+}
+
