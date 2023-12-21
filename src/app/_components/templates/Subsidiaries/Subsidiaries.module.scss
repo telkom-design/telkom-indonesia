@@ -39,7 +39,6 @@
 .subsidiariesCompanyBox[data-animated="false"]
   .subsidiariesCompanyBoxScrollInner {
   animation: scroll 0s linear infinite paused;
-  animation-play-state: paused;
 }
 
 .subsidiariesCompanyBox[data-animated="true"] {
@@ -50,7 +49,7 @@
   .subsidiariesCompanyBoxScrollInner {
   display: flex;
   flex-wrap: nowrap !important;
-  animation: scroll 12s linear infinite running;
+  animation: scroll 16s linear infinite;
   width: max-content;
 }
 
