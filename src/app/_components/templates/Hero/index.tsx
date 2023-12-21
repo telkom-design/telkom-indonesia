@@ -1,8 +1,10 @@
+"use client";
+
 import Image from "next/image"
 import { IconArrowUpRight, IconChevronLeft, IconChevronRight } from "@tabler/icons-react"
 import { Flex, Box, Button, Text } from "../../atoms"
 
-import './hero.scss'
+import './style.scss'
 
 const BgLiniear = 'linear-gradient(42deg, #F9FAFB 57.8%, rgba(249, 250, 251, 0.00) 64.53%);'
 export const Hero = () => {
@@ -109,7 +111,7 @@ export const Hero = () => {
         </div>
         {/* navigation */}
         <Box as="nav" className="hero-nav">
-          <Text as="h2" mt="16px" color="tertiary700" size="16px" height="150%" weight="700" mb="6px">Discover Our Company</Text>
+          <Text as="p" height="150%" weight="700" mt="16px">Discover Our Company</Text>
           <a href="#telkom-for-indonesia">Telkom for Indonesia</a>
           <a href="#telkom-in-years">Telkom In Years</a>
           <a href="#subsidiaries">Subsidiaries</a>
