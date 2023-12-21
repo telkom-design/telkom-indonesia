@@ -105,38 +105,62 @@ export const TelkomInYears = () => {
         </Box>
 
         <Box className={styles.telkomInYearsBoxStatsOne}>
-          <Box
+          <Flex
+            width="24px"
+            height="24px"
+            radius="50%"
             mr="auto"
             ml="auto"
-            background="#000"
-            radius="50%"
-            width="16px"
-            height="16px"
-          />
+            alignX="center"
+            alignY="center"
+          >
+            <Box
+              background="#000"
+              radius="50%"
+              width="16px"
+              height="16px"
+            />
+          </Flex>
           <Text as="p" size="18px" weight="700">Jan 2023</Text>
         </Box>
 
         <Box className={styles.telkomInYearsBoxStatsTwo}>
-          <Box
+          <Flex
+            width="24px"
+            height="24px"
+            radius="50%"
             mr="auto"
             ml="auto"
-            background="#000"
-            radius="50%"
-            width="16px"
-            height="16px"
-          />
+            alignX="center"
+            alignY="center"
+          >
+            <Box
+              background="#000"
+              radius="50%"
+              width="16px"
+              height="16px"
+            />
+          </Flex>
           <Text as="p" size="18px" weight="700">Feb 2023</Text>
         </Box>
 
         <Box className={styles.telkomInYearsBoxStatsThree}>
-          <Box
+          <Flex
+            width="24px"
+            height="24px"
+            radius="50%"
             mr="auto"
             ml="auto"
-            background="#000"
-            radius="50%"
-            width="16px"
-            height="16px"
-          />
+            alignX="center"
+            alignY="center"
+          >
+            <Box
+              background="#000"
+              radius="50%"
+              width="16px"
+              height="16px"
+            />
+          </Flex>
           <Text as="p" size="18px" weight="700">Apr 2023</Text>
         </Box>
 
