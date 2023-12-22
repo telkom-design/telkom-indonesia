@@ -1,20 +1,21 @@
+"use client";
+
 import Image from "next/image"
 import { IconArrowUpRight, IconChevronLeft, IconChevronRight } from "@tabler/icons-react"
 import { Flex, Box, Button, Text } from "../../atoms"
 
-import './hero.scss'
+import './style.scss'
 
 const BgLiniear = 'linear-gradient(42deg, #F9FAFB 57.8%, rgba(249, 250, 251, 0.00) 64.53%);'
 export const Hero = () => {
   return (
-    <Flex alignX='space-between' width='1328px' margin='24px 0'>
-      <Box width="990px" height="649px" radius="24px" background={BgLiniear} style={{ position: 'relative'}}>
+    <Flex alignX='space-between' margin='24px 0'>
+      <Box width="calc(75% - 12px)" height="649px" radius="24px" background={BgLiniear} style={{ position: 'relative'}}>
         {/* fixed text */}
         <Box pt='224px' pl="56px" style={{ position: 'absolute', zIndex: '1'}}>
           <Text size="30px" weight="300" color="basewhite"><Text color="primary500">#</Text>ElevatingYourFuture</Text>
           <Text as='h3' size="104px" weight="800" height="102.885%" color="basewhite">Elevating Your</Text>
         </Box>
-
         {/* carousel */}
         <div className="hero-carousel hero-carousel--landscape">
           <ul className="hero-carousel__img">
@@ -22,6 +23,7 @@ export const Hero = () => {
                 <Image
                   src={`/home/hero-landscape.jpg`}
                   alt='hero-lanscape-1'
+                  style={{objectFit: "cover"}}
                   priority={true}
                   width={990}
                   height={409}
@@ -31,6 +33,7 @@ export const Hero = () => {
                 <Image
                   src={`/home/hero-landscape.jpg`}
                   alt='hero-lanscape-2'
+                  style={{objectFit: "cover"}}
                   priority={true}
                   width={990}
                   height={409}
@@ -40,6 +43,7 @@ export const Hero = () => {
                 <Image
                   src={`/home/hero-landscape.jpg`}
                   alt='hero-lanscape-3'
+                  style={{objectFit: "cover"}}
                   priority={true}
                   width={990}
                   height={409}
@@ -79,7 +83,7 @@ export const Hero = () => {
           </Flex> 
         </div>
       </Box>
-      <Box width="314px" style={{ position: 'relative'}}>
+      <Box width="calc(25% - 12px)" style={{ position: 'relative'}}>
         {/* carousel i*/}
         <div className="hero-carousel">
           <ul className="hero-carousel__img">
@@ -88,6 +92,7 @@ export const Hero = () => {
                 <Image
                   src={`/home/hero-potrait.jpg`}
                   alt={`hero-potrait-${item}`}
+                  style={{objectFit: "cover"}}
                   priority={true}
                   width={314}
                   height={409}
@@ -106,7 +111,7 @@ export const Hero = () => {
         </div>
         {/* navigation */}
         <Box as="nav" className="hero-nav">
-          <Text as="h2" mt="16px" color="tertiary700" size="16px" height="150%" weight="700" mb="6px">Discover Our Company</Text>
+          <Text as="p" height="150%" weight="700" mt="16px">Discover Our Company</Text>
           <a href="#telkom-for-indonesia">Telkom for Indonesia</a>
           <a href="#telkom-in-years">Telkom In Years</a>
           <a href="#subsidiaries">Subsidiaries</a>
