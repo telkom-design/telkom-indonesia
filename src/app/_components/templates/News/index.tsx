@@ -8,6 +8,9 @@ import {
 // atoms
 import { Anchor, Box, Button, Divider, Flex, Image, Text } from "../../atoms";
 
+// organisms
+import { NextPrev } from "../../organisms";
+
 export const News = () => {
   return (
     <Box className={`${styles.newsBox}`} margin="56px 0">
@@ -30,21 +33,7 @@ export const News = () => {
           <Flex alignX="space-between" className={styles.newsBoxCopyAnchors}>
             <Anchor iconRight={<IconArrowUpRight size={24} />}>See More</Anchor>
 
-            <Flex>
-              <Button
-                color="tertiary"
-                variant="outline"
-                iconLeft={<IconChevronLeft size={24} />}
-                className={styles.newsBoxCopyAnchorsButtonPrevious}
-              />
-
-              <Button
-                color="tertiary"
-                variant="outline"
-                iconLeft={<IconChevronRight size={24} />}
-                className={styles.newsBoxCopyAnchorsButtonNext}
-              />
-            </Flex>
+            <NextPrev />
           </Flex>
         </Flex>
 
