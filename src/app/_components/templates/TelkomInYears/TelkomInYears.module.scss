@@ -3,15 +3,15 @@
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: repeat(3, min-content);
   gap: 32px 0;
-  
+
   .telkomInYearsBoxTitle {
-    grid-column: 1/7;
+    grid-column: 1/8;
     max-width: 554px;
   }
 
   .telkomInYearsBoxImageInfo {
     grid-row: 2/3;
-    grid-column: 2/7;
+    grid-column: 2/8;
     border-top-left-radius: 24px;
     border-bottom-left-radius: 24px;
 
@@ -21,7 +21,7 @@
   }
 
   .telkomInYearsBoxImage {
-    grid-column: 7/13;
+    grid-column: 8/13;
     grid-row: 1/3;
     overflow: hidden;
     position: relative;
@@ -47,7 +47,7 @@
       > img.active {
         width: 80px;
         height: 80px;
-        border: 4px solid #E42313;
+        border: 4px solid #e42313;
         filter: grayscale(0);
       }
     }
@@ -63,12 +63,13 @@
   .telkomInYearsBoxStats {
     padding-top: 16px;
     padding-bottom: 60px;
-    grid-column: 2/-1; 
+    grid-column: 2/-1;
     position: relative;
+    left: -60px;
+    width: calc(100% + 60px);
 
-    
     .telkomInYearsBoxStatsStart {
-      top: calc(25% - 6px); 
+      top: calc(25% - 7px);
       left: 0;
       position: absolute;
       text-align: center;
@@ -77,9 +78,9 @@
         margin-top: 16px;
       }
     }
-    
+
     .telkomInYearsBoxStatsEnd {
-      top: calc(25% - 6px); 
+      top: calc(25% - 7px);
       right: 0;
       position: absolute;
       text-align: center;
@@ -90,7 +91,7 @@
     }
 
     .telkomInYearsBoxStatsOne {
-      top: 50%; 
+      top: 50%;
       left: 182px;
       transform: translateY(calc(-50% - 2px));
       position: absolute;
@@ -100,9 +101,9 @@
         margin-top: 16px;
       }
     }
-    
+
     .telkomInYearsBoxStatsTwo {
-      top: 50%; 
+      top: 50%;
       left: 303px;
       transform: translateY(calc(-50% - 2px));
       position: absolute;
@@ -112,9 +113,9 @@
         margin-top: 16px;
       }
     }
-    
+
     .telkomInYearsBoxStatsThree {
-      top: 50%; 
+      top: 50%;
       left: 427px;
       transform: translateY(calc(-50% - 2px));
       position: absolute;
@@ -125,9 +126,9 @@
       }
     }
 
-    // dynamic 
+    // dynamic
     .telkomInYearsBoxStatsFour {
-      top: 50%; 
+      top: 50%;
       right: 543px;
       transform: translateY(calc(-50% - 2px));
       position: absolute;
@@ -135,11 +136,11 @@
 
       > p {
         margin-top: 16px;
-      }  
+      }
     }
-    
+
     .telkomInYearsBoxStatsFive {
-      top: 50%; 
+      top: 50%;
       right: 114px;
       transform: translateY(calc(-50% - 2px));
       position: absolute;
@@ -149,9 +150,9 @@
         margin-top: 16px;
       }
     }
-    
+
     .telkomInYearsBoxStatsSix {
-      top: 50%; 
+      top: 50%;
       right: 8px;
       transform: translateY(calc(-50% - 2px));
       position: absolute;
