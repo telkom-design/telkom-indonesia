@@ -36,11 +36,6 @@
   gap: 24px;
 }
 
-.subsidiariesCompanyBox[data-animated="false"]
-  .subsidiariesCompanyBoxScrollInner {
-  animation: scroll 0s linear infinite paused;
-}
-
 .subsidiariesCompanyBox[data-animated="true"] {
   overflow: hidden;
 }
@@ -49,12 +44,19 @@
   .subsidiariesCompanyBoxScrollInner {
   display: flex;
   flex-wrap: nowrap !important;
-  animation: scroll 16s linear infinite;
+  animation: scroll 14s linear infinite;
   width: max-content;
 }
 
+.subsidiariesCompanyBox:hover .subsidiariesCompanyBoxScrollInner {
+  animation-play-state: paused;
+}
+
 @keyframes scroll {
-  to {
+  0% {
+    transform: translate(0);
+  }
+  100% {
     transform: translate(calc(-50% - 12px));
   }
 }
