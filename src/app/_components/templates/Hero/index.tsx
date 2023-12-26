@@ -15,6 +15,7 @@ import { Flex, Box, Button, Text } from "../../atoms";
 
 // const
 import { CAROUSEL_ANIMATED_SECTION } from "@/app/_constants";
+import { useHeroCarouselHook } from "@/app/_hooks";
 const CAROUSEL_IMAGES = [
   "/home/hero-landscape-1.webp",
   "/home/hero-landscape-2.webp",
@@ -33,61 +34,8 @@ const CAROUSEL_PORTRAIT_IMAGES = [
 const BgLiniear =
   "linear-gradient(42deg, #F9FAFB 57.8%, rgba(249, 250, 251, 0.00) 64.53%);";
 export const Hero = () => {
-  const [currentActiveCarousel, setCurrentActiveCarousel] = useState(1);
-  const [framerValues, setFramerValues] = useState({
-    carouselInitial: 0,
-    carouselExit: 0,
-    carouselAnimatedTitleInitial: 0,
-    carouselAnimatedTitleExit: 0,
-    carouselNextSectionInitial: 0,
-    carouselNextSectionExit: 0,
-    carouselCounterInitial: 0,
-    carouselCounterExit: 0,
-  });
-
-  const handleCarouselSlider = (state: string) => {
-    if (state === "previous") {
-      setFramerValues((prev) => ({
-        ...prev,
-        carouselInitial: -1568,
-        carouselExit: 1568,
-        carouselAnimatedTitleInitial: -60,
-        carouselAnimatedTitleExit: 60,
-        carouselNextSectionInitial: -32,
-        carouselNextSectionExit: 32,
-        carouselCounterInitial: -6,
-        carouselCounterExit: 6,
-      }));
-
-      if (currentActiveCarousel === 1) {
-        setCurrentActiveCarousel(5);
-        return;
-      }
-
-      setCurrentActiveCarousel((prev) => (prev -= 1));
-    }
-
-    if (state === "next") {
-      setFramerValues((prev) => ({
-        ...prev,
-        carouselInitial: 1568,
-        carouselExit: -1568,
-        carouselAnimatedTitleInitial: 60,
-        carouselAnimatedTitleExit: -60,
-        carouselNextSectionInitial: 32,
-        carouselNextSectionExit: -32,
-        carouselCounterInitial: 6,
-        carouselCounterExit: -6,
-      }));
-
-      if (currentActiveCarousel === 5) {
-        setCurrentActiveCarousel(1);
-        return;
-      }
-
-      setCurrentActiveCarousel((prev) => (prev += 1));
-    }
-  };
+  const { currentActiveCarousel, framerValues, handleCarouselSlider } =
+    useHeroCarouselHook();
 
   return (
     <Flex alignX="space-between" margin="24px 0">
@@ -117,7 +65,10 @@ export const Hero = () => {
         <div className="hero-carousel hero-carousel--landscape">
           <ul className="hero-carousel__img">
             {CAROUSEL_IMAGES.map((carouselImage, i) => (
-              <li className={i + 1 === currentActiveCarousel ? "active" : ""}>
+              <li
+                key={carouselImage}
+                className={i + 1 === currentActiveCarousel ? "active" : ""}
+              >
                 <AnimatePresence>
                   {i + 1 === currentActiveCarousel && (
                     <motion.div
@@ -221,7 +172,7 @@ export const Hero = () => {
             <span className="hero-carousel__counter__amount">
               <AnimatePresence>
                 {[1, 2, 3, 4, 5].map((curr) => (
-                  <>
+                  <div key={curr}>
                     {currentActiveCarousel === curr && (
                       <motion.div
                         initial={{
@@ -235,7 +186,7 @@ export const Hero = () => {
                         <Text as="p">{currentActiveCarousel}</Text>
                       </motion.div>
                     )}
-                  </>
+                  </div>
                 ))}
               </AnimatePresence>
               / 5
