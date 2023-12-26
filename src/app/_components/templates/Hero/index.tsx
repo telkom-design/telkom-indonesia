@@ -41,6 +41,8 @@ export const Hero = () => {
     carouselAnimatedTitleExit: 0,
     carouselNextSectionInitial: 0,
     carouselNextSectionExit: 0,
+    carouselCounterInitial: 0,
+    carouselCounterExit: 0,
   });
 
   const handleCarouselSlider = (state: string) => {
@@ -53,6 +55,8 @@ export const Hero = () => {
         carouselAnimatedTitleExit: 60,
         carouselNextSectionInitial: -32,
         carouselNextSectionExit: 32,
+        carouselCounterInitial: -6,
+        carouselCounterExit: 6,
       }));
 
       if (currentActiveCarousel === 1) {
@@ -72,6 +76,8 @@ export const Hero = () => {
         carouselAnimatedTitleExit: -60,
         carouselNextSectionInitial: 32,
         carouselNextSectionExit: -32,
+        carouselCounterInitial: 6,
+        carouselCounterExit: -6,
       }));
 
       if (currentActiveCarousel === 5) {
@@ -212,7 +218,28 @@ export const Hero = () => {
             ))}
           </ul>
           <div className="hero-carousel__counter">
-            <span className="hero-carousel__counter__amount">1 / 5</span>
+            <span className="hero-carousel__counter__amount">
+              <AnimatePresence>
+                {[1, 2, 3, 4, 5].map((curr) => (
+                  <>
+                    {currentActiveCarousel === curr && (
+                      <motion.div
+                        initial={{
+                          y: framerValues.carouselCounterInitial,
+                        }}
+                        animate={{ y: 0 }}
+                        exit={{ y: framerValues.carouselCounterExit }}
+                        transition={{ duration: 0.2 }}
+                        style={{ marginRight: ".35rem" }}
+                      >
+                        <Text as="p">{currentActiveCarousel}</Text>
+                      </motion.div>
+                    )}
+                  </>
+                ))}
+              </AnimatePresence>
+              / 5
+            </span>
             <span
               className="hero-carousel__counter__indicator"
               style={{
