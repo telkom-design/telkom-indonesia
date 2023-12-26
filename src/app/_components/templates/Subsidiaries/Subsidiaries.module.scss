@@ -48,7 +48,7 @@
   width: max-content;
 }
 
-.subsidiariesCompanyBox:hover .subsidiariesCompanyBoxScrollInner {
+.subsidiariesCompanyBox .subsidiariesCompanyBoxScrollInner:hover {
   animation-play-state: paused;
 }
 

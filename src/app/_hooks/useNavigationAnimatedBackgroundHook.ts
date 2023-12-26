@@ -39,7 +39,7 @@ export const useNavigationAnimatedBackgroundHook = () => {
         (scrollY - threshold) / window.innerHeight,
         1
       );
-      const expandedWidth = `${scrollPercentage * 200}%`;
+      const expandedWidth = `${scrollPercentage * 600}%`;
       const borderRadiusValue = `${20 - scrollPercentage * 20}px`;
 
       return {
