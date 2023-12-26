@@ -22,6 +22,13 @@ const CAROUSEL_IMAGES = [
   "/home/hero-landscape-4.webp",
   "/home/hero-landscape-5.webp",
 ];
+const CAROUSEL_PORTRAIT_IMAGES = [
+  "/home/hero-portrait-1.webp",
+  "/home/hero-portrait-2.webp",
+  "/home/hero-portrait-3.webp",
+  "/home/hero-portrait-4.webp",
+  "/home/hero-portrait-5.webp",
+];
 
 const BgLiniear =
   "linear-gradient(42deg, #F9FAFB 57.8%, rgba(249, 250, 251, 0.00) 64.53%);";
@@ -40,8 +47,8 @@ export const Hero = () => {
     if (state === "previous") {
       setFramerValues((prev) => ({
         ...prev,
-        carouselInitial: -1164,
-        carouselExit: 1164,
+        carouselInitial: -1568,
+        carouselExit: 1568,
         carouselAnimatedTitleInitial: -60,
         carouselAnimatedTitleExit: 60,
         carouselNextSectionInitial: -32,
@@ -59,8 +66,8 @@ export const Hero = () => {
     if (state === "next") {
       setFramerValues((prev) => ({
         ...prev,
-        carouselInitial: 1164,
-        carouselExit: -1164,
+        carouselInitial: 1568,
+        carouselExit: -1568,
         carouselAnimatedTitleInitial: 60,
         carouselAnimatedTitleExit: -60,
         carouselNextSectionInitial: 32,
@@ -208,7 +215,11 @@ export const Hero = () => {
             <span className="hero-carousel__counter__amount">1 / 5</span>
             <span
               className="hero-carousel__counter__indicator"
-              style={{ width: "calc(100% - 5)" }}
+              style={{
+                width: "calc(100% - 5)",
+                left: `calc(100% / 5 * ${currentActiveCarousel - 1})`,
+                transition: "all 0.4s ease-in-out",
+              }}
             ></span>
           </div>
           <Flex
@@ -236,16 +247,44 @@ export const Hero = () => {
         {/* carousel i*/}
         <div className="hero-carousel">
           <ul className="hero-carousel__img">
-            {[1, 2, 3].map((item) => (
-              <li key={item} className={item === 1 ? "active" : ""}>
-                <Image
-                  src={`/home/hero-potrait.jpg`}
-                  alt={`hero-potrait-${item}`}
-                  style={{ objectFit: "cover" }}
-                  priority={true}
-                  width={314}
-                  height={409}
-                />
+            {CAROUSEL_PORTRAIT_IMAGES.map((carouselPortraitImage, i) => (
+              <li
+                key={carouselPortraitImage}
+                className={
+                  i + 1 ===
+                  (currentActiveCarousel + 1 === 6
+                    ? 1
+                    : currentActiveCarousel + 1)
+                    ? "active"
+                    : ""
+                }
+              >
+                <AnimatePresence>
+                  {i + 1 ===
+                    (currentActiveCarousel + 1 === 6
+                      ? 1
+                      : currentActiveCarousel + 1) && (
+                    <motion.div
+                      initial={{ x: framerValues.carouselInitial }}
+                      animate={{ x: 0 }}
+                      exit={{ x: framerValues.carouselExit }}
+                      transition={{
+                        duration: 0.3,
+                        ease: "easeInOut",
+                        delay: 0.2,
+                      }}
+                    >
+                      <Image
+                        src={carouselPortraitImage}
+                        alt={carouselPortraitImage}
+                        style={{ objectFit: "cover" }}
+                        priority={true}
+                        width={314}
+                        height={409}
+                      />
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </li>
             ))}
           </ul>
