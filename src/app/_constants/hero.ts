@@ -1,4 +1,4 @@
-export const HERO_SECOND_SECTION = [
+export const CAROUSEL_ANIMATED_SECTION = [
   {
     id: 1,
     title: "Business",

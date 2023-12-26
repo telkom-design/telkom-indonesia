@@ -39,8 +39,12 @@
 
   &__text {
     position: absolute;
-    bottom: 19px;
+    // bottom: 19px;
     left: 87px;
+
+    &__next {
+      bottom: 19px;
+    }
 
     &__description {
       max-width: 455px;

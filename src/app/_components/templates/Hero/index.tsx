@@ -14,7 +14,7 @@ import "./style.scss";
 import { Flex, Box, Button, Text } from "../../atoms";
 
 // const
-import { HERO_SECOND_SECTION } from "@/app/_constants";
+import { CAROUSEL_ANIMATED_SECTION } from "@/app/_constants";
 const CAROUSEL_IMAGES = [
   "/home/hero-landscape-1.webp",
   "/home/hero-landscape-2.webp",
@@ -27,9 +27,27 @@ const BgLiniear =
   "linear-gradient(42deg, #F9FAFB 57.8%, rgba(249, 250, 251, 0.00) 64.53%);";
 export const Hero = () => {
   const [currentActiveCarousel, setCurrentActiveCarousel] = useState(1);
+  const [framerValues, setFramerValues] = useState({
+    carouselInitial: 0,
+    carouselExit: 0,
+    carouselAnimatedTitleInitial: 0,
+    carouselAnimatedTitleExit: 0,
+    carouselNextSectionInitial: 0,
+    carouselNextSectionExit: 0,
+  });
 
   const handleCarouselSlider = (state: string) => {
     if (state === "previous") {
+      setFramerValues((prev) => ({
+        ...prev,
+        carouselInitial: -1164,
+        carouselExit: 1164,
+        carouselAnimatedTitleInitial: -60,
+        carouselAnimatedTitleExit: 60,
+        carouselNextSectionInitial: -32,
+        carouselNextSectionExit: 32,
+      }));
+
       if (currentActiveCarousel === 1) {
         setCurrentActiveCarousel(5);
         return;
@@ -39,6 +57,16 @@ export const Hero = () => {
     }
 
     if (state === "next") {
+      setFramerValues((prev) => ({
+        ...prev,
+        carouselInitial: 1164,
+        carouselExit: -1164,
+        carouselAnimatedTitleInitial: 60,
+        carouselAnimatedTitleExit: -60,
+        carouselNextSectionInitial: 32,
+        carouselNextSectionExit: -32,
+      }));
+
       if (currentActiveCarousel === 5) {
         setCurrentActiveCarousel(1);
         return;
@@ -80,9 +108,9 @@ export const Hero = () => {
                 <AnimatePresence>
                   {i + 1 === currentActiveCarousel && (
                     <motion.div
-                      initial={{ x: 1164 }}
+                      initial={{ x: framerValues.carouselInitial }}
                       animate={{ x: 0 }}
-                      exit={{ x: -1164 }}
+                      exit={{ x: framerValues.carouselExit }}
                       transition={{ duration: 0.3, ease: "easeInOut" }}
                     >
                       <Image
@@ -105,7 +133,7 @@ export const Hero = () => {
               transition: "all 0.4s ease-out",
             }}
           >
-            {HERO_SECOND_SECTION.map((heroSecondSection) => (
+            {CAROUSEL_ANIMATED_SECTION.map((heroSecondSection) => (
               <li
                 key={heroSecondSection.id}
                 className={
@@ -116,9 +144,11 @@ export const Hero = () => {
                   {currentActiveCarousel === heroSecondSection.id && (
                     <div style={{ overflow: "hidden" }}>
                       <motion.div
-                        initial={{ y: 60 }}
+                        initial={{
+                          y: framerValues.carouselAnimatedTitleInitial,
+                        }}
                         animate={{ y: 0 }}
-                        exit={{ y: -60 }}
+                        exit={{ y: framerValues.carouselAnimatedTitleExit }}
                         transition={{ duration: 0.2 }}
                       >
                         <Text
@@ -143,9 +173,11 @@ export const Hero = () => {
                         }}
                       >
                         <motion.div
-                          initial={{ y: 60 }}
+                          initial={{
+                            y: framerValues.carouselAnimatedTitleInitial,
+                          }}
                           animate={{ y: 0 }}
-                          exit={{ y: -60 }}
+                          exit={{ y: framerValues.carouselAnimatedTitleExit }}
                           transition={{ duration: 0.2, delay: 0.2 }}
                           style={{ display: "flex" }}
                         >
@@ -217,7 +249,7 @@ export const Hero = () => {
               </li>
             ))}
           </ul>
-          <ul className="hero-carousel__text">
+          <ul className="hero-carousel__text hero-carousel__text__next">
             {["Business", "Venture", "Activities", "Society", "Dreams"].map(
               (item, i) => (
                 <li
@@ -238,9 +270,11 @@ export const Hero = () => {
                         : currentActiveCarousel + 1) && (
                       <div style={{ overflow: "hidden" }}>
                         <motion.div
-                          initial={{ y: 32 }}
+                          initial={{
+                            y: framerValues.carouselNextSectionInitial,
+                          }}
                           animate={{ y: 0 }}
-                          exit={{ y: -32 }}
+                          exit={{ y: framerValues.carouselNextSectionExit }}
                           transition={{ duration: 0.2 }}
                         >
                           <Text
