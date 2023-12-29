@@ -9,6 +9,7 @@ type DesktopDropdownNavigation = {
   icon?: string;
   title: string;
   description?: string;
+  url: string;
 };
 
 const DropdownMenuIcon = ({ icon }: { icon: string }) => {
@@ -17,9 +18,15 @@ const DropdownMenuIcon = ({ icon }: { icon: string }) => {
   return <SelectedIcon color="#D92D20" size={24} />;
 };
 
-export const DesktopDropdownNavigation = (props: { items: DesktopDropdownNavigation[] }) => {
+export const DesktopDropdownNavigation = (props: {
+  items: DesktopDropdownNavigation[];
+}) => {
   return (
-    <Box width="20rem" height="auto" className={styles.DesktopDropdownNavigation}>
+    <Box
+      width="20rem"
+      height="auto"
+      className={styles.DesktopDropdownNavigation}
+    >
       <Box
         shadow="0px 4px 6px -2px rgba(16, 24, 40, .40)"
         radius="24px"
@@ -28,8 +35,8 @@ export const DesktopDropdownNavigation = (props: { items: DesktopDropdownNavigat
         background="#fff"
         mt="24px"
       >
-        {props.items.map(({ icon, title, description }) => (
-          <Anchor key={title}>
+        {props.items.map(({ icon, title, description, url }) => (
+          <Anchor key={title} href={url}>
             <Flex padding="12px">
               {icon && <DropdownMenuIcon icon={icon} />}
 
