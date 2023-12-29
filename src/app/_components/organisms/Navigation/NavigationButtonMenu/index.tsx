@@ -8,12 +8,14 @@ import {
   Divider,
   Flex,
   Text,
-  TextField,
+  Textfield,
 } from "@/app/_components/atoms";
 
-export const NavigationButtonMenu = (
-  { toggleSearch }: { toggleSearch: any },
-) => {
+export const NavigationButtonMenu = ({
+  toggleSearch,
+}: {
+  toggleSearch: any;
+}) => {
   return (
     <Box
       background="#fff"
@@ -24,7 +26,7 @@ export const NavigationButtonMenu = (
       className={styles.NavigationButtonMenuBox}
     >
       <Flex mb="8px">
-        <TextField
+        <Textfield
           iconLeft={<IconSearch size={24} />}
           className={styles.NavigationButtonMenuBoxSearchField}
         />
@@ -44,7 +46,9 @@ export const NavigationButtonMenu = (
 
       <Divider padding="16px" />
 
-      <Text as="p" mb="16px" color="#101828">Reccomendations</Text>
+      <Text as="p" mb="16px" color="#101828">
+        Reccomendations
+      </Text>
 
       <Box>
         <ul>
@@ -55,7 +59,9 @@ export const NavigationButtonMenu = (
               padding="12px 0"
               className={`${styles.NavigationButtonMenuBoxRecommendations} ${styles.NavigationButtonMenuBoxRecommendationsTopBorder}`}
             >
-              <Text as="p" color="tertiary500">Board of directors</Text>
+              <Text as="p" color="tertiary500">
+                Board of directors
+              </Text>
               <IconArrowUpRight size={24} />
             </Flex>
           </li>
@@ -66,7 +72,9 @@ export const NavigationButtonMenu = (
               padding="12px 0"
               className={styles.NavigationButtonMenuBoxRecommendations}
             >
-              <Text as="p" color="tertiary500">Financial report</Text>
+              <Text as="p" color="tertiary500">
+                Financial report
+              </Text>
               <IconArrowUpRight size={24} />
             </Flex>
           </li>
@@ -77,7 +85,9 @@ export const NavigationButtonMenu = (
               padding="12px 0"
               className={styles.NavigationButtonMenuBoxRecommendations}
             >
-              <Text as="p" color="tertiary500">Annual report</Text>
+              <Text as="p" color="tertiary500">
+                Annual report
+              </Text>
               <IconArrowUpRight size={24} />
             </Flex>
           </li>

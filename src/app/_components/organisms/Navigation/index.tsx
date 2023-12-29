@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import styles from "./Header.module.scss";
 import { IconChevronDown } from "@tabler/icons-react";
 
@@ -23,19 +23,35 @@ import {
   SOLUTIONS,
 } from "@/app/_constants";
 
+// hooks
+import { useNavigationAnimatedBackgroundHook } from "@/app/_hooks";
+
 export const Navigation = () => {
-  const [toggleDropdownNavigation, setToggleDropdownNavigation] = useState("");
-  const [toggleDropdownSearch, setToggleDropdownSearch] = useState(false);
+  const {
+    toggleDropdownNavigation,
+    setToggleDropdownNavigation,
+    toggleDropdownSearch,
+    setToggleDropdownSearch,
+    paddingTop,
+    calculateWidthAndPosition,
+  } = useNavigationAnimatedBackgroundHook();
 
   return (
-    <Box className={styles.navigationGrid}>
+    <div className={styles.navigationGrid}>
+      <div
+        className={styles.navigationGridAnimatedBackground}
+        style={{
+          top: `${paddingTop}px`,
+          ...calculateWidthAndPosition(),
+        }}
+      ></div>
       <Flex
         padding="16px"
         alignX="space-between"
         alignY="center"
         radius="1.25rem"
-        mt="1rem"
         background="tertiary50"
+        style={{ marginTop: `${paddingTop}px` }}
       >
         <Anchor href="/">
           <Image
@@ -69,7 +85,8 @@ export const Navigation = () => {
           </Anchor>
           <Anchor
             onMouseEnter={() =>
-              setToggleDropdownNavigation("investor_relations")}
+              setToggleDropdownNavigation("investor_relations")
+            }
             onMouseLeave={() => setToggleDropdownNavigation("")}
             href=""
           >
@@ -80,7 +97,8 @@ export const Navigation = () => {
           </Anchor>
           <Anchor
             onMouseEnter={() =>
-              setToggleDropdownNavigation("news_and_resources")}
+              setToggleDropdownNavigation("news_and_resources")
+            }
             onMouseLeave={() => setToggleDropdownNavigation("")}
             href=""
           >
@@ -160,8 +178,8 @@ export const Navigation = () => {
           background="#000"
           width="100%"
           className={styles.navigationGridOverlay}
-        >
-        </Box>
+          style={{ top: `calc(80px + ${paddingTop}px)` }}
+        ></Box>
       )}
 
       {toggleDropdownSearch && (
@@ -170,11 +188,10 @@ export const Navigation = () => {
             background="#000"
             width="100%"
             className={styles.navigationGridSearchOverlay}
-          >
-          </Box>
+          ></Box>
           <NavigationButtonMenu toggleSearch={setToggleDropdownSearch} />
         </>
       )}
-    </Box>
+    </div>
   );
 };

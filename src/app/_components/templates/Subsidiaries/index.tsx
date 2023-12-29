@@ -12,8 +12,9 @@ import { useInfiniteAnimationHook } from "@/app/_hooks";
 import { SUBSIDIARIES } from "@/app/_constants";
 
 export const Subsidiaries = () => {
-  const { scrollerRef, handleAnimationEnter, handleAnimationLeave } =
-    useInfiniteAnimationHook();
+  const { scrollerRef } = useInfiniteAnimationHook();
+
+  const [animationState, setAnimationState] = useState("running");
 
   return (
     <>
@@ -50,14 +51,12 @@ export const Subsidiaries = () => {
                 <Text as="h4" color="tertiary400">
                   100+ Partners & branch worldwide
                 </Text>
-                {
-                  /*
+                {/*
             <Text as="p">
               Telkom provide your business the most extensive way to reach more
               than 120 million users.
             </Text>
-            */
-                }
+            */}
               </Box>
             </Box>
           </Box>
@@ -79,11 +78,7 @@ export const Subsidiaries = () => {
         data-animated="true"
         className={`full-width ${styles.subsidiariesCompanyBox}`}
       >
-        <div
-          onMouseEnter={handleAnimationEnter}
-          onMouseLeave={handleAnimationLeave}
-          className={styles.subsidiariesCompanyBoxScrollInner}
-        >
+        <div className={styles.subsidiariesCompanyBoxScrollInner}>
           {SUBSIDIARIES.map((subsidiary) => (
             <Box
               key={subsidiary.logo}

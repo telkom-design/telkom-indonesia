@@ -9,13 +9,5 @@ export const useInfiniteAnimationHook = () => {
     }
   }, []);
 
-  const handleAnimationEnter = () => {
-    scrollerRef.current?.setAttribute("data-animated", "false");
-  };
-
-  const handleAnimationLeave = () => {
-    scrollerRef.current?.setAttribute("data-animated", "true");
-  };
-
-  return { scrollerRef, handleAnimationEnter, handleAnimationLeave };
+  return { scrollerRef };
 };

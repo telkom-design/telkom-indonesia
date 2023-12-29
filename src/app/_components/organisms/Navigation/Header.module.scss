@@ -1,6 +1,13 @@
 .navigationGrid {
-  position: relative;
+  --padding-inline: 3.5rem;
+  --content-max-width: 98rem;
+
+  position: sticky;
+  left: 0;
+  right: 0;
+  top: 0;
   display: grid !important;
+  z-index: 4;
   grid-template-columns:
     [full-width-start]
     minmax(var(--padding-inline), 1fr)
@@ -12,6 +19,13 @@
 
   > :not(.full-width) {
     grid-column: content;
+  }
+
+  .navigationGridAnimatedBackground {
+    background-color: #f9fafb;
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
   }
 
   .navigationLinksDesktop {
@@ -50,7 +64,7 @@
     z-index: 1;
     min-height: 200vh !important;
   }
-  
+
   .navigationGridSearchOverlay {
     position: fixed;
     top: 0;

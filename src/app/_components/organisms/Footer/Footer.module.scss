@@ -1,4 +1,7 @@
 .footerGrid {
+  --padding-inline: 3.5rem;
+  --content-max-width: 98rem;
+  
   padding: 56px 0 !important;
   display: grid;
   grid-template-columns:

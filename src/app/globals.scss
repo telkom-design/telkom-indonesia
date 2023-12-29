@@ -22,12 +22,13 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 	display: block;
 }
 body {
-  --padding-inline: 3.5rem;
-  --content-max-width: 98rem;
-
+  overflow-x: hidden;
   line-height: 1;
 }
 main {
+  --padding-inline: 3.5rem;
+  --content-max-width: 98rem;
+
   overflow: hidden;
   scroll-behavior: smooth;
   display: grid;
@@ -41,7 +42,7 @@ main {
     [full-width-end];
 }
 main > :not(.full-width) {
-  grid-column: content !important;
+  grid-column: content;
 }
 main > .full-width {
   grid-column: full-width;
