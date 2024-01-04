@@ -38,7 +38,12 @@ export const Hero = () => {
     useHeroCarouselHook();
 
   return (
-    <Flex alignX="space-between" margin="24px 0">
+    <Flex
+      alignX="space-between"
+      alignY="center"
+      margin="24px 0"
+      height="calc(100vh - 176px)"
+    >
       <Box
         width="calc(75% - 12px)"
         height="649px"

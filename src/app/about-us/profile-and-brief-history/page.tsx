@@ -53,7 +53,7 @@ const ProfileAndBriefHistory = () => {
           </Text>
 
           <Flex className="about-us--content-flex-row">
-            <Box width="50%">
+            <Box width="48%">
               <Text as="p" color="tertiary500" size="16px" mb="16px">
                 Respond the industry shift to Digital, to support National
                 Digitization and to internalize the transformation agenda Telkom

@@ -20,7 +20,12 @@
 
 .about-us--tabs {
   grid-column: full-width !important;
+  border-top: 1px solid #d0d5dd !important;
 
+  position: -webkit-sticky;
+  position: sticky !important;
+  top: 80px !important;
+  z-index: 4;
   display: grid !important;
   grid-template-columns:
     [full-width-start]
@@ -41,6 +46,7 @@
       text-decoration: none;
       position: relative;
       padding: 1rem 12px;
+      color: #475467;
     }
 
     > a:hover::after {
@@ -57,6 +63,21 @@
 
     > a:hover p {
       color: #e42313;
+    }
+
+    > a.active p {
+      color: #e42313;
+    }
+
+    > a.active::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 4px;
+      width: 100%;
+      border-bottom: 4px solid #e42313;
+      padding-bottom: -2px;
     }
   }
 }

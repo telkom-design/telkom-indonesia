@@ -12,7 +12,7 @@ import { Box, Button, Flex, Image, Text } from "../../atoms";
 import { NextPrev } from "../../organisms";
 import React from "react";
 
-export const TelkomInYears = ({proportion}: {proportion: number}) => {
+export const TelkomInYears = ({ proportion }: { proportion: number }) => {
   return (
     <Box margin="48px 0" className={styles.telkomInYearsBox}>
       <Box className={styles.telkomInYearsBoxTitle}>
@@ -52,8 +52,12 @@ export const TelkomInYears = ({proportion}: {proportion: number}) => {
       <Box radius="20px" className={styles.telkomInYearsBoxImage}>
         <Image src="/tiy-illustration.svg" width="auto" height="510px" />
         <Box className={styles.telkomInYearsBoxImageMeta}>
-          <Text as="p" color="#fff" weight="400" size="16px">NeutraDC</Text>
-          <Text as="p" color="#fff" weight="400" size="16px">Batam, 2022</Text>
+          <Text as="p" color="#fff" weight="400" size="16px">
+            NeutraDC
+          </Text>
+          <Text as="p" color="#fff" weight="400" size="16px">
+            Batam, 2022
+          </Text>
         </Box>
         <Flex className={styles.telkomInYearsBoxImageThumbs}>
           <Image
@@ -72,12 +76,24 @@ export const TelkomInYears = ({proportion}: {proportion: number}) => {
         mt="auto"
         className={styles.telkomInYearsBoxYears}
       >
-        <Text color="tertiary400" size="18px">2018</Text>
-        <Text color="tertiary400" size="18px">2019</Text>
-        <Text color="tertiary400" size="18px">2020</Text>
-        <Text color="tertiary400" size="18px">2021</Text>
-        <Text color="tertiary400" size="18px">2022</Text>
-        <Text size="18px" color="#1d1d1b">2023</Text>
+        <Text color="tertiary400" size="18px">
+          2018
+        </Text>
+        <Text color="tertiary400" size="18px">
+          2019
+        </Text>
+        <Text color="tertiary400" size="18px">
+          2020
+        </Text>
+        <Text color="tertiary400" size="18px">
+          2021
+        </Text>
+        <Text color="tertiary400" size="18px">
+          2022
+        </Text>
+        <Text size="18px" color="#1d1d1b">
+          2023
+        </Text>
       </Flex>
 
       <Flex className={styles.telkomInYearsBoxStats}>
@@ -115,14 +131,11 @@ export const TelkomInYears = ({proportion}: {proportion: number}) => {
             alignX="center"
             alignY="center"
           >
-            <Box
-              background="#000"
-              radius="50%"
-              width="16px"
-              height="16px"
-            />
+            <Box background="#000" radius="50%" width="16px" height="16px" />
           </Flex>
-          <Text as="p" size="18px" weight="700">Jan 2023</Text>
+          <Text as="p" size="18px" weight="700">
+            Jan 2023
+          </Text>
         </Box>
 
         <Box className={styles.telkomInYearsBoxStatsTwo}>
@@ -135,14 +148,11 @@ export const TelkomInYears = ({proportion}: {proportion: number}) => {
             alignX="center"
             alignY="center"
           >
-            <Box
-              background="#000"
-              radius="50%"
-              width="16px"
-              height="16px"
-            />
+            <Box background="#000" radius="50%" width="16px" height="16px" />
           </Flex>
-          <Text as="p" size="18px" weight="700">Feb 2023</Text>
+          <Text as="p" size="18px" weight="700">
+            Feb 2023
+          </Text>
         </Box>
 
         <Box className={styles.telkomInYearsBoxStatsThree}>
@@ -155,14 +165,11 @@ export const TelkomInYears = ({proportion}: {proportion: number}) => {
             alignX="center"
             alignY="center"
           >
-            <Box
-              background="#000"
-              radius="50%"
-              width="16px"
-              height="16px"
-            />
+            <Box background="#000" radius="50%" width="16px" height="16px" />
           </Flex>
-          <Text as="p" size="18px" weight="700">Apr 2023</Text>
+          <Text as="p" size="18px" weight="700">
+            Apr 2023
+          </Text>
         </Box>
 
         <Box className={styles.telkomInYearsBoxStatsFour}>
@@ -183,7 +190,9 @@ export const TelkomInYears = ({proportion}: {proportion: number}) => {
               height="16px"
             />
           </Flex>
-          <Text as="p" size="18px" weight="700">Jan 2023</Text>
+          <Text as="p" size="18px" weight="700">
+            Jan 2023
+          </Text>
         </Box>
 
         <Box className={styles.telkomInYearsBoxStatsFive}>
@@ -196,14 +205,11 @@ export const TelkomInYears = ({proportion}: {proportion: number}) => {
             alignX="center"
             alignY="center"
           >
-            <Box
-              background="#1D1D1B"
-              radius="50%"
-              width="16px"
-              height="16px"
-            />
+            <Box background="#1D1D1B" radius="50%" width="16px" height="16px" />
           </Flex>
-          <Text as="p" size="18px" weight="700">Feb 2023</Text>
+          <Text as="p" size="18px" weight="700">
+            Feb 2023
+          </Text>
         </Box>
 
         <Box className={styles.telkomInYearsBoxStatsSix}>
@@ -216,14 +222,11 @@ export const TelkomInYears = ({proportion}: {proportion: number}) => {
             alignX="center"
             alignY="center"
           >
-            <Box
-              background="#1D1D1B"
-              radius="50%"
-              width="16px"
-              height="16px"
-            />
+            <Box background="#1D1D1B" radius="50%" width="16px" height="16px" />
           </Flex>
-          <Text as="p" size="18px" weight="700">Apr 2023</Text>
+          <Text as="p" size="18px" weight="700">
+            Apr 2023
+          </Text>
         </Box>
       </Flex>
     </Box>
