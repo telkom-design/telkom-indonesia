@@ -1,5 +1,5 @@
 import styles from "./Subsidiaries.module.scss";
-import { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 
 // atoms
@@ -11,7 +11,7 @@ import { useInfiniteAnimationHook } from "@/app/_hooks";
 // constants
 import { SUBSIDIARIES } from "@/app/_constants";
 
-export const Subsidiaries = () => {
+export const Subsidiaries = ({proportion}: {proportion: number}) => {
   const { scrollerRef } = useInfiniteAnimationHook();
 
   const [animationState, setAnimationState] = useState("running");
