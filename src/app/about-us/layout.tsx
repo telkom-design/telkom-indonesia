@@ -2,6 +2,10 @@
 
 import Link from "next/link";
 import "./style.scss";
+import { usePathname } from "next/navigation";
+
+// utils
+import { checkActiveLink } from "../_utils";
 
 // atoms
 import { Box, Image, Text, Flex } from "@/app/_components/atoms";
@@ -11,6 +15,8 @@ export default function DashboardLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const pathname = usePathname();
+
   return (
     <main>
       <Box mt="32px" className="about-us--banner">
@@ -36,38 +42,36 @@ export default function DashboardLayout({
 
       <Box className="about-us--tabs" background="tertiary300">
         <Flex className="about-us--tabs-items">
-          <Link href="/about-us/profile-and-brief-history">
-            <Text as="p" color="tertiary600">
-              Profile & Brief History
-            </Text>
+          <Link
+            className={checkActiveLink(
+              "/about-us/profile-and-brief-history",
+              pathname,
+            )}
+            href="/about-us/profile-and-brief-history"
+          >
+            <Text as="p">Profile & Brief History</Text>
           </Link>
-          <Link href="/about-us/58-tahun-telkom">
-            <Text as="p" color="tertiary600">
-              58 Tahun Telkom
-            </Text>
+          <Link
+            className={checkActiveLink("/about-us/58-tahun-telkom", pathname)}
+            href="/about-us/58-tahun-telkom"
+          >
+            <Text as="p">58 Tahun Telkom</Text>
           </Link>
-          <Link href="#">
-            <Text as="p" color="tertiary600">
-              Leadership
-            </Text>
+          <Link className={checkActiveLink("#", pathname)} href="#">
+            <Text as="p">Leadership</Text>
           </Link>
-          <Link href="#">
-            <Text as="p" color="tertiary600">
-              Company Structure
-            </Text>
+          <Link className={checkActiveLink("#", pathname)} href="#">
+            <Text as="p">Company Structure</Text>
           </Link>
-          <Link href="#">
-            <Text as="p" color="tertiary600">
-              Governance (GCG)
-            </Text>
+          <Link className={checkActiveLink("#", pathname)} href="#">
+            <Text as="p">Governance (GCG)</Text>
           </Link>
-          <Link href="#">
-            <Text as="p" color="tertiary600">
-              Awards
-            </Text>
+          <Link className={checkActiveLink("#", pathname)} href="#">
+            <Text as="p">Awards</Text>
           </Link>
         </Flex>
       </Box>
+
       {children}
     </main>
   );
