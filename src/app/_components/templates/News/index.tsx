@@ -22,10 +22,10 @@ export const News = () => {
       >
         <Flex direction="column" padding="2rem" style={{ flexGrow: 1 }}>
           <Text as="h2" color="tertiary800" weight="800">
-            Reports
+            News
           </Text>
           <Text as="p" color="tertiary500" size="18px" mt="1rem">
-            All of our link information and report ranging throughout the years.
+            See the full detail of news and activities of Telkom Group.
           </Text>
 
           <Divider padding="82px" />

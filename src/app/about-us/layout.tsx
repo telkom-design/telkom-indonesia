@@ -23,7 +23,7 @@ export default function DashboardLayout({
         <Image
           src="/about-us/about-us-profile-and-brief-history.webp"
           width="100%"
-          height="auto"
+          height="100%"
           radius="24px 24px 0px 0px"
         />
         <Box
@@ -40,12 +40,12 @@ export default function DashboardLayout({
         </Box>
       </Box>
 
-      <Box className="about-us--tabs" background="tertiary300">
+      <Box className="about-us--tabs" background="tertiary50">
         <Flex className="about-us--tabs-items">
           <Link
             className={checkActiveLink(
               "/about-us/profile-and-brief-history",
-              pathname,
+              pathname
             )}
             href="/about-us/profile-and-brief-history"
           >
