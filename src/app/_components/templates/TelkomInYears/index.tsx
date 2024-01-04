@@ -10,8 +10,9 @@ import { Box, Button, Flex, Image, Text } from "../../atoms";
 
 // organisms
 import { NextPrev } from "../../organisms";
+import React from "react";
 
-export const TelkomInYears = () => {
+export const TelkomInYears = ({proportion}: {proportion: number}) => {
   return (
     <Box margin="48px 0" className={styles.telkomInYearsBox}>
       <Box className={styles.telkomInYearsBoxTitle}>
