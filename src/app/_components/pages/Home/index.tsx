@@ -8,15 +8,13 @@ import {
   Subsidiaries,
   TelkomForIndonesia,
   TelkomInYears,
-} from "./_components/templates";
+} from "../../templates";
 
 import React from "react";
-import { ScrollContext } from "./_libs/providers";
-import { Footer, StickyView } from "./_components/organisms";
+import { ScrollContext } from "@/app/_libs/providers";
+import { Footer, StickyView } from "../../organisms";
 
-export default function Home({ news }: { news: any }) {
-  console.log({ news });
-
+export const Home = () => {
   const [scrollingElement, setScrollingElement] =
     React.useState<HTMLDivElement>();
 
@@ -52,9 +50,9 @@ export default function Home({ news }: { news: any }) {
           {(proportion) => <Subsidiaries proportion={proportion} />}
         </StickyView>
         <Reports />
-        <News news={news} />
+        <News />
         <Footer />
       </main>
     </ScrollContext.Provider>
   );
-}
+};
