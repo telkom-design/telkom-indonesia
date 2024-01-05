@@ -5,7 +5,7 @@ import "./style.scss";
 import { usePathname } from "next/navigation";
 
 // utils
-import { checkActiveLink } from "../_utils";
+import { checkActiveLink } from "@/app/_utils";
 
 // atoms
 import { Box, Image, Text, Flex } from "@/app/_components/atoms";

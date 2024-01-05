@@ -1,21 +1,21 @@
 .footerGrid {
   --padding-inline: 3.5rem;
   --content-max-width: 98rem;
-  
+
   padding: 56px 0 !important;
   display: grid;
-  grid-template-columns:
-    [full-width-start]
-    minmax(var(--padding-inline), 1fr)
-    [content-start]
-    min(100% - (var(--padding-inline) * 2), var(--content-max-width))
-    [content-end]
-    minmax(var(--padding-inline), 1fr)
-    [full-width-end];
+  // grid-template-columns:
+  //   [full-width-start]
+  //   minmax(var(--padding-inline), 1fr)
+  //   [content-start]
+  //   min(100% - (var(--padding-inline) * 2), var(--content-max-width))
+  //   [content-end]
+  //   minmax(var(--padding-inline), 1fr)
+  //   [full-width-end];
 
-  > :not(.full-width) {
-    grid-column: content;
-  }
+  // > :not(.full-width) {
+  //   grid-column: content;
+  // }
 
   .footerBox {
     background-color: #1d1d1b !important;

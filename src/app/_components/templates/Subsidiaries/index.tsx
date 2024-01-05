@@ -11,17 +11,14 @@ import { useInfiniteAnimationHook } from "@/app/_hooks";
 // constants
 import { SUBSIDIARIES } from "@/app/_constants";
 
-export const Subsidiaries = ({proportion}: {proportion: number}) => {
+export const Subsidiaries = ({ proportion }: { proportion: number }) => {
   const { scrollerRef } = useInfiniteAnimationHook();
 
   const [animationState, setAnimationState] = useState("running");
 
   return (
     <>
-      <Box
-        background="tertiary50"
-        className={`${styles.subsidiariesBox} full-width`}
-      >
+      <Box background="tertiary50" className={`${styles.subsidiariesBox} `}>
         <Box className={styles.content}>
           <Box width="44%" padding="48px 56px 48px 0">
             <Text as="h2" mb="16px">

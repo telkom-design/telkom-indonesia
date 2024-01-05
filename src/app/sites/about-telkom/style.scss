@@ -81,3 +81,14 @@
     }
   }
 }
+
+.detail-content {
+  p > strong{
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  p {
+    line-height: 50px;
+  }
+}

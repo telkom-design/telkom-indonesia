@@ -9,7 +9,10 @@ import { LegionProvider } from "./_libs/providers";
 // organisms
 import { Navigation } from "./_components/organisms";
 
-const lato = Lato({ weight: ["300", "400", "700", "900"], subsets: ["latin-ext"] });
+const lato = Lato({
+  weight: ["300", "400", "700", "900"],
+  subsets: ["latin-ext"],
+});
 
 export default function RootLayout({
   children,
