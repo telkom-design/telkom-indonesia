@@ -7,7 +7,7 @@ import "./globals.scss";
 import { LegionProvider } from "./_libs/providers";
 
 // organisms
-import { Footer, Navigation } from "./_components/organisms";
+import { Navigation } from "./_components/organisms";
 
 const lato = Lato({
   weight: ["300", "400", "700", "900"],
