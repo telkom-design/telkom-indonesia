@@ -36,9 +36,9 @@ const DynamicViews = ({navigationData, pageData}: {navigationData: NavigationDat
     };
   }, [isAnyParams]);
 
-  React.useEffect(()=>{
-    console.log(pageData)
-  }, [pageData])
+  // React.useEffect(()=>{
+  //   console.log(pageData)
+  // }, [pageData])
 
   return (
     <LegionProvider>

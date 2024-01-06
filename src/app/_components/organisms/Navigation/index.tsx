@@ -140,7 +140,7 @@ export const Navigation = ({data, grip}: {data?: NavigationData[], grip?: HTMLDi
               }
 
               return (
-                <React.Fragment key={String()}>
+                <React.Fragment key={String(identifier)}>
                   <Anchor
                     {...anchorProps}
                   >
