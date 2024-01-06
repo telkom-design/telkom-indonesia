@@ -23,15 +23,15 @@ export const TelkomForIndonesia = ({ proportion }: { proportion: number }) => {
     len.forEach((_, index) => {
       const pos = round(proportion, 1) === round(0.5 + index * 0.16, 1);
       if (pos && active !== index) {
-        console.log(index);
+        // console.log(index);
         setActive(index);
       }
     });
   }, [proportion, images, active]);
 
-  React.useEffect(() => {
-    console.log(proportion);
-  }, [proportion]);
+  // React.useEffect(() => {
+  //   console.log(proportion);
+  // }, [proportion]);
 
   return (
     <Flex

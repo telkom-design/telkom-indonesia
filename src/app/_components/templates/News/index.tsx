@@ -46,15 +46,16 @@ export const News = ({ news }: { news: any }) => {
       </Flex>
 
       <Flex className={styles.newsBoxNews}>
-        {news.map((news: any) => (
-          <Box width="268px" height="auto" className={styles.newsBoxNewsCard}>
+        {news?.map((news: any) => (
+          <Box key={`news_${news.id_news}`} width="268px" height="auto" className={styles.newsBoxNewsCard}>
             <Box className={styles.newsBoxNewsCardImage} mb="24px">
-              <Image src="/news-image.svg" width="267px" height="184px" />
+              <Image style={{borderRadius: "20px"}} src={`https://telkom.co.id${news.news_thumbnail}`} width="267px" height="184px" alt={news.news_title} />
               <Image
                 src="/news-card-mask.svg"
                 width="183px"
                 height="64px"
                 className={styles.newsBoxNewsCardImageMask}
+                alt="mask"
               />
               <Text
                 className={styles.newsBoxNewsCardImageDate}

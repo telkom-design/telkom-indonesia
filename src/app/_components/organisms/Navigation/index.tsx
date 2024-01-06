@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styles from "./Header.module.scss";
 import { IconChevronDown } from "@tabler/icons-react";
 
@@ -26,7 +26,12 @@ import {
 // hooks
 import { useNavigationAnimatedBackgroundHook } from "@/app/_hooks";
 
-export const Navigation = () => {
+export interface NavigationData extends DesktopDropdownNavigation {
+  id: number,
+  childrens?: NavigationData[]
+}
+
+export const Navigation = ({data, grip}: {data?: NavigationData[], grip?: HTMLDivElement}) => {
   const {
     toggleDropdownNavigation,
     setToggleDropdownNavigation,
@@ -34,7 +39,7 @@ export const Navigation = () => {
     setToggleDropdownSearch,
     paddingTop,
     calculateWidthAndPosition,
-  } = useNavigationAnimatedBackgroundHook();
+  } = useNavigationAnimatedBackgroundHook({grip});
 
   return (
     <div className={styles.navigationGrid}>
@@ -62,7 +67,7 @@ export const Navigation = () => {
           />
         </Anchor>
 
-        <nav className={styles.navigationLinksDesktop}>
+        {!data && <nav className={styles.navigationLinksDesktop}>
           <Anchor
             onMouseEnter={() => setToggleDropdownNavigation("about-us")}
             onMouseLeave={() => setToggleDropdownNavigation("")}
@@ -118,7 +123,40 @@ export const Navigation = () => {
             )}
           </Anchor>
           <Anchor href="">Careers</Anchor>
-        </nav>
+        </nav>}
+
+        {data && (
+          <nav className={styles.navigationLinksDesktop}>
+            {data.map(nav => {
+              const identifier = `navbar_${nav.id}`
+              const children = nav.childrens
+              
+              const anchorProps = children ? {
+                onMouseEnter: ()=>setToggleDropdownNavigation(identifier),
+                onMouseLeave: ()=> setToggleDropdownNavigation(""),
+                href: ""
+              } : {
+                href: nav.url
+              }
+
+              return (
+                <React.Fragment key={String()}>
+                  <Anchor
+                    {...anchorProps}
+                  >
+                    {nav.title}
+                    {children && <>
+                      &nbsp;<IconChevronDown size={20} />
+                      {toggleDropdownNavigation === identifier && (
+                        <DesktopDropdownNavigation items={children} />
+                      )}
+                    </>}
+                  </Anchor>
+                </React.Fragment>
+              )
+            })}
+          </nav>
+        )}
 
         <Flex className={styles.navigationLinksDesktop}>
           <Button

@@ -1,0 +1,128 @@
+.banner {
+    position: relative;
+
+    &-mask {
+        position: absolute;
+        top: -16px;
+        left: 0;
+        z-index: 1;
+        box-shadow: rgba(255, 255, 255, 0.6) 0px 30px 256px !important;
+        filter: blur(4rem);
+    }
+
+    &-text {
+        position: absolute;
+        top: 40px;
+        left: 56px;
+        z-index: 2;
+    }
+}
+
+.tabs {
+    grid-column: full-width !important;
+    border-top: 1px solid #d0d5dd !important;
+
+    position: -webkit-sticky;
+    position: sticky !important;
+    top: 80px !important;
+    z-index: 1;
+    display: grid !important;
+    grid-template-columns:
+        [full-width-start] minmax(var(--padding-inline), 1fr) [content-start] min(100% - (var(--padding-inline) * 2), var(--content-max-width)) [content-end] minmax(var(--padding-inline), 1fr) [full-width-end];
+
+    &-items {
+        grid-column: content !important;
+        gap: 1rem;
+
+        >a {
+            display: flex !important;
+            align-items: center;
+            text-decoration: none;
+            position: relative;
+            padding: 1rem 12px;
+            color: #475467;
+        }
+
+        >a:hover::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 4px;
+            width: 100%;
+            border-bottom: 4px solid #e42313;
+            padding-bottom: -2px;
+            animation: tabs 0.2s linear;
+        }
+
+        >a:hover p {
+            color: #e42313;
+        }
+
+        >a.active p {
+            color: #e42313;
+        }
+
+        >a.active::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 4px;
+            width: 100%;
+            border-bottom: 4px solid #e42313;
+            padding-bottom: -2px;
+        }
+    }
+}
+
+.content {
+    h2 {
+        font-weight: 700;
+        font-size: 48px;
+        margin-bottom: 24px;
+    }
+
+    h5 {
+        font-weight: 700;
+        font-size: 24px;
+        margin-bottom: 5px;
+    }
+
+    p {
+        line-height: 1.4;
+        margin-bottom: 16px;
+    }
+
+    ul {
+        li {
+            position: relative;
+            padding-left: 32px;
+        }
+
+        li::before {
+            content: "";
+            position: absolute;
+            top: 25%;
+            left: 0;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: black;
+        }
+
+        li:not(:last-child) {
+            margin-bottom: 10px;
+        }
+    }
+}
+
+@keyframes tabs {
+    from {
+        width: 0%;
+    }
+
+    to {
+        width: 100%;
+    }
+}
