@@ -55,7 +55,7 @@ export const StickyView = (props: StickyViewProps) => {
 
       scrollingElement.dispatchEvent(syntheticEvent);
     }
-    console.log(scrollingElement?.clientHeight);
+    // console.log(scrollingElement?.clientHeight);
     return () => scrollingElement?.removeEventListener("scroll", onScroll);
   }, [scrollingElement]);
 

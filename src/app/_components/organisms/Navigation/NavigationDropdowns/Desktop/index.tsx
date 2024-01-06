@@ -5,7 +5,7 @@ import * as TablerIcon from "@tabler/icons-react";
 // atoms
 import { Box, Anchor, Text, Flex } from "@/app/_components/atoms";
 
-type DesktopDropdownNavigation = {
+export type DesktopDropdownNavigation = {
   icon?: string;
   title: string;
   description?: string;
