@@ -49,6 +49,7 @@ export const TelkomForIndonesia = ({ proportion }: { proportion: number }) => {
       }}
       background="tertiary50"
       margin="200px 0"
+      id="telkom-for-indonesia"
     >
       <Box
         style={{ display: "flex", position: "relative" }}

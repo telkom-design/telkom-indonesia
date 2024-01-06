@@ -13,7 +13,7 @@ import { Anchor, Box, Flex, Image, Text } from "../../atoms";
 
 export const Reports = () => {
   return (
-    <Box className={styles.reportsBox} margin="56px 0">
+    <Box id="reports" className={styles.reportsBox} margin="56px 0">
       <Flex direction="column" radius="24px" background="tertiary50">
         <Flex direction="column" padding="2rem" style={{ flexGrow: 1 }}>
           <Text as="h2" color="tertiary800" weight="800">

@@ -14,7 +14,7 @@ import React from "react";
 
 export const TelkomInYears = ({ proportion }: { proportion: number }) => {
   return (
-    <Box margin="48px 0" className={styles.telkomInYearsBox}>
+    <Box id="telkom-in-years" margin="48px 0" className={styles.telkomInYearsBox}>
       <Box className={styles.telkomInYearsBoxTitle}>
         <Text as="h2">Telkom In Years</Text>
         <Text

@@ -13,7 +13,7 @@ import { NextPrev } from "../../organisms";
 
 export const News = ({ news }: { news: any }) => {
   return (
-    <Box className={`${styles.newsBox}`} margin="56px 0">
+    <Box id="news-and-events" className={`${styles.newsBox}`} margin="56px 0">
       <Flex
         direction="column"
         radius="24px"
