@@ -115,6 +115,38 @@
             margin-bottom: 10px;
         }
     }
+    div.center {
+        display: flex;
+        justify-content: center;
+    }
+    table.profile {
+        width: 80%;
+        td {
+            padding: 10px;
+            text-align: center;
+        }
+        td.full-name {
+            font-size: 18px;
+            font-weight: 700;
+        }
+        td.title {
+            color: #999999;
+        }
+        tr.link {
+            a {
+                display: block;
+                border-top: 1px solid #dee2e6;
+                padding-top: 5px;
+                color:#E71618;
+                text-decoration: none;
+                font-size: 1rem;
+                font-weight: bold;
+            }
+        }
+        img {
+            width: 100%;
+        }
+    }
 }
 
 @keyframes tabs {
