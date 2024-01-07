@@ -47,9 +47,20 @@ export const News = ({ news }: { news: any }) => {
 
       <Flex className={styles.newsBoxNews}>
         {news?.map((news: any) => (
-          <Box key={`news_${news.id_news}`} width="268px" height="auto" className={styles.newsBoxNewsCard}>
+          <Box
+            key={`news_${news.id_news}`}
+            width="268px"
+            height="auto"
+            className={styles.newsBoxNewsCard}
+          >
             <Box className={styles.newsBoxNewsCardImage} mb="24px">
-              <Image style={{borderRadius: "20px"}} src={`https://telkom.co.id${news.news_thumbnail}`} width="267px" height="184px" alt={news.news_title} />
+              <Image
+                style={{ borderRadius: "20px" }}
+                src={`https://telkom.co.id${news.news_thumbnail}`}
+                width="267px"
+                height="184px"
+                alt={news.news_title}
+              />
               <Image
                 src="/news-card-mask.svg"
                 width="183px"
@@ -90,7 +101,8 @@ export const News = ({ news }: { news: any }) => {
           </Box>
         ))}
 
-        {/* <Box width="268px" height="auto" className={styles.newsBoxNewsCard}>
+        {
+          /* <Box width="268px" height="auto" className={styles.newsBoxNewsCard}>
           <Box className={styles.newsBoxNewsCardImage} mb="24px">
             <Image src="/news-image.svg" width="267px" height="184px" />
             <Image
@@ -262,7 +274,8 @@ export const News = ({ news }: { news: any }) => {
               brings the best of the world for you and your company.
             </Text>
           </Box>
-        </Box> */}
+        </Box> */
+        }
       </Flex>
     </Box>
   );

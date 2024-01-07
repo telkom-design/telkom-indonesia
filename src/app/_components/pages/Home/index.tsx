@@ -15,8 +15,9 @@ import { ScrollContext } from "@/app/_libs/providers";
 import { Footer, StickyView } from "../../organisms";
 
 export const Home = () => {
-  const [scrollingElement, setScrollingElement] =
-    React.useState<HTMLDivElement>();
+  const [scrollingElement, setScrollingElement] = React.useState<
+    HTMLDivElement
+  >();
 
   function scrollingElRef(ref: HTMLDivElement) {
     setScrollingElement(ref);
@@ -50,7 +51,7 @@ export const Home = () => {
           {(proportion) => <Subsidiaries proportion={proportion} />}
         </StickyView>
         <Reports />
-        <News />
+        {/* <News /> */}
         <Footer />
       </main>
     </ScrollContext.Provider>
