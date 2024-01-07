@@ -334,7 +334,7 @@ export const Hero = () => {
           <a href="#telkom-in-years">Telkom In Years</a>
           <a href="#subsidiaries">Subsidiaries</a>
           <a href="#reports">Reports</a>
-          <a href="#new-and-events">News & Events</a>
+          <a href="#news-and-events">News & Events</a>
         </Box>
       </Box>
     </Flex>

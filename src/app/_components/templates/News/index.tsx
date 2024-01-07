@@ -11,9 +11,9 @@ import { Anchor, Box, Button, Divider, Flex, Image, Text } from "../../atoms";
 // organisms
 import { NextPrev } from "../../organisms";
 
-export const News = () => {
+export const News = ({ news }: { news: any }) => {
   return (
-    <Box className={`${styles.newsBox}`} margin="56px 0">
+    <Box id="news-and-events" className={`${styles.newsBox}`} margin="56px 0">
       <Flex
         direction="column"
         radius="24px"
@@ -46,50 +46,51 @@ export const News = () => {
       </Flex>
 
       <Flex className={styles.newsBoxNews}>
-        <Box width="268px" height="auto" className={styles.newsBoxNewsCard}>
-          <Box className={styles.newsBoxNewsCardImage} mb="24px">
-            <Image src="/news-image.svg" width="267px" height="184px" />
-            <Image
-              src="/news-card-mask.svg"
-              width="183px"
-              height="64px"
-              className={styles.newsBoxNewsCardImageMask}
-            />
-            <Text
-              className={styles.newsBoxNewsCardImageDate}
-              as="p"
-              weight="400"
-              color="tertiary500"
-            >
-              25 December 2023
-            </Text>
+        {news?.map((news: any) => (
+          <Box key={`news_${news.id_news}`} width="268px" height="auto" className={styles.newsBoxNewsCard}>
+            <Box className={styles.newsBoxNewsCardImage} mb="24px">
+              <Image style={{borderRadius: "20px"}} src={`https://telkom.co.id${news.news_thumbnail}`} width="267px" height="184px" alt={news.news_title} />
+              <Image
+                src="/news-card-mask.svg"
+                width="183px"
+                height="64px"
+                className={styles.newsBoxNewsCardImageMask}
+                alt="mask"
+              />
+              <Text
+                className={styles.newsBoxNewsCardImageDate}
+                as="p"
+                weight="400"
+                color="tertiary500"
+              >
+                {new Date(news.created_at).toLocaleDateString()}
+              </Text>
+            </Box>
+
+            <Box style={{ whiteSpace: "break-spaces" }}>
+              <Text
+                as="h4"
+                size="22px"
+                height="32px"
+                mb="1rem"
+                className={styles.newsBoxNewsCardTitle}
+              >
+                {news.news_title}
+              </Text>
+
+              <Text
+                as="p"
+                mb="1rem"
+                color="tertiary500"
+                className={styles.newsBoxNewsCardDescription}
+              >
+                {news.news_summary}
+              </Text>
+            </Box>
           </Box>
+        ))}
 
-          <Box style={{ whiteSpace: "break-spaces" }}>
-            <Text
-              as="h4"
-              size="22px"
-              height="32px"
-              mb="1rem"
-              className={styles.newsBoxNewsCardTitle}
-            >
-              TelkomGroup Kembali Gelar Event Internasional BATIC 2023
-            </Text>
-
-            <Text
-              as="p"
-              mb="1rem"
-              color="tertiary500"
-              className={styles.newsBoxNewsCardDescription}
-            >
-              Through our most advanced technology, brings the best of the world
-              for you and your company. Through our most advanced technology,
-              brings the best of the world for you and your company.
-            </Text>
-          </Box>
-        </Box>
-
-        <Box width="268px" height="auto" className={styles.newsBoxNewsCard}>
+        {/* <Box width="268px" height="auto" className={styles.newsBoxNewsCard}>
           <Box className={styles.newsBoxNewsCardImage} mb="24px">
             <Image src="/news-image.svg" width="267px" height="184px" />
             <Image
@@ -261,7 +262,7 @@ export const News = () => {
               brings the best of the world for you and your company.
             </Text>
           </Box>
-        </Box>
+        </Box> */}
       </Flex>
     </Box>
   );

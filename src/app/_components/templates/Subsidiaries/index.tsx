@@ -18,7 +18,7 @@ export const Subsidiaries = ({ proportion }: { proportion: number }) => {
 
   return (
     <>
-      <Box background="tertiary50" className={`${styles.subsidiariesBox} `}>
+      <Box id="subsidiaries" background="tertiary50" className={`${styles.subsidiariesBox} `}>
         <Box className={styles.content}>
           <Box width="44%" padding="48px 56px 48px 0">
             <Text as="h2" mb="16px">

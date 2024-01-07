@@ -1,14 +1,15 @@
 import { useState, useEffect } from "react";
 
-export const useNavigationAnimatedBackgroundHook = () => {
+export const useNavigationAnimatedBackgroundHook = ({grip}: {grip?: HTMLDivElement}) => {
   const [toggleDropdownNavigation, setToggleDropdownNavigation] = useState("");
   const [toggleDropdownSearch, setToggleDropdownSearch] = useState(false);
   const [scrollY, setScrollY] = useState(0);
   const [paddingTop, setPaddingTop] = useState(16);
+  let el = !!grip?.getAttribute("style")
 
   useEffect(() => {
     const handleScroll = () => {
-      const currentScrollY = window.scrollY;
+      const currentScrollY = (el && grip) ? grip.scrollTop : window.scrollY;
       const maxScroll = 24;
       const minScroll = 0;
       const maxPadding = 16;
@@ -24,12 +25,20 @@ export const useNavigationAnimatedBackgroundHook = () => {
       setScrollY(currentScrollY);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    if(!el){
+      window.addEventListener("scroll", handleScroll);
+    }else{
+      grip?.addEventListener("scroll", handleScroll);
+    }
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      if(!el){
+        window.removeEventListener("scroll", handleScroll);
+      }else{
+        grip?.addEventListener("scroll", handleScroll);
+      }
     };
-  }, []);
+  }, [grip, el]);
 
   const calculateWidthAndPosition = () => {
     const threshold = 24;
