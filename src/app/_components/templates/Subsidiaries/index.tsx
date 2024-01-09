@@ -1,9 +1,9 @@
 import styles from "./Subsidiaries.module.scss";
 import React, { useEffect, useRef, useState } from "react";
-import { createPortal } from "react-dom";
+import { IconArrowUpRight } from "@tabler/icons-react";
 
 // atoms
-import { Box, Image, Text } from "../../atoms";
+import { Box, Image, Text, Anchor } from "../../atoms";
 
 // hooks
 import { useInfiniteAnimationHook } from "@/app/_hooks";
@@ -18,7 +18,11 @@ export const Subsidiaries = ({ proportion }: { proportion: number }) => {
 
   return (
     <>
-      <Box id="subsidiaries" background="tertiary50" className={`${styles.subsidiariesBox} `}>
+      <Box
+        id="subsidiaries"
+        background="tertiary50"
+        className={`${styles.subsidiariesBox} `}
+      >
         <Box className={styles.content}>
           <Box width="44%" padding="48px 56px 48px 0">
             <Text as="h2" mb="16px">
@@ -77,51 +81,77 @@ export const Subsidiaries = ({ proportion }: { proportion: number }) => {
       >
         <div className={styles.subsidiariesCompanyBoxScrollInner}>
           {SUBSIDIARIES.map((subsidiary) => (
-            <Box
-              key={subsidiary.logo}
-              padding="48px 24px"
-              background="#fff"
-              radius="24px"
-              width="314px"
-              className={styles.subsidiariesCompanyBoxCard}
+            <a
+              href="#"
+              style={{ display: "inline-block", textDecoration: "none" }}
+              className={styles.subsidiariesCompanyBoxCompanyCardLink}
             >
-              <Image
-                src={subsidiary.logo}
-                width="min-content"
-                height="52px"
-                margin="0 0 72px 0"
-                alt={subsidiary.logo}
-              />
+              <Box
+                key={subsidiary.logo}
+                padding="48px 24px"
+                background="#fff"
+                radius="24px"
+                width="314px"
+                height="100%"
+                className={styles.subsidiariesCompanyBoxCard}
+              >
+                <Image
+                  src={subsidiary.logo}
+                  width="min-content"
+                  height="52px"
+                  margin="0 0 72px 0"
+                  alt={subsidiary.logo}
+                />
 
-              <Text as="p" color="tertiary500">
-                {subsidiary.description}
-              </Text>
-            </Box>
+                <Text as="p" color="tertiary500">
+                  {subsidiary.description}
+                </Text>
+
+                <Box className={styles.subsidiariesCompanyBoxCardHover}>
+                  <Anchor size="lg">
+                    Open Website <IconArrowUpRight size={20} />
+                  </Anchor>
+                </Box>
+              </Box>
+            </a>
           ))}
 
           {/* Hidden */}
           {SUBSIDIARIES.map((subsidiary) => (
-            <Box
-              aria-hidden="true"
-              key={subsidiary.logo}
-              padding="48px 24px"
-              background="#fff"
-              radius="24px"
-              width="314px"
-              className={styles.subsidiariesCompanyBoxCard}
+            <a
+              href="#"
+              style={{ display: "inline-block", textDecoration: "none" }}
+              className={styles.subsidiariesCompanyBoxCompanyCardLink}
             >
-              <Image
-                src={subsidiary.logo}
-                width="min-content"
-                height="52px"
-                margin="0 0 72px 0"
-                alt={subsidiary.logo}
-              />
+              <Box
+                aria-hidden="true"
+                key={subsidiary.logo}
+                padding="48px 24px"
+                background="#fff"
+                radius="24px"
+                width="314px"
+                height="100%"
+                className={styles.subsidiariesCompanyBoxCard}
+              >
+                <Image
+                  src={subsidiary.logo}
+                  width="min-content"
+                  height="52px"
+                  margin="0 0 72px 0"
+                  alt={subsidiary.logo}
+                />
 
-              <Text as="p" color="tertiary500">
-                {subsidiary.description}
-              </Text>
-            </Box>
+                <Text as="p" color="tertiary500">
+                  {subsidiary.description}
+                </Text>
+
+                <Box className={styles.subsidiariesCompanyBoxCardHover}>
+                  <Anchor size="lg">
+                    Open Website <IconArrowUpRight size={20} />
+                  </Anchor>
+                </Box>
+              </Box>
+            </a>
           ))}
         </div>
       </div>

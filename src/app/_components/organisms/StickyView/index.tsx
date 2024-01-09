@@ -10,12 +10,15 @@ import styles from "./StickyView.module.scss";
 
 interface StickyViewProps {
   height: number;
+
   gridColumn?: string;
+  top?: number;
+  backgroundColor?: string;
   children: (proportion: number) => ReactNode;
 }
 
 export const StickyView = (props: StickyViewProps) => {
-  const { height, gridColumn, children } = props;
+  const { height, gridColumn, children, top = 20, backgroundColor } = props;
   const elRef = useRef<HTMLDivElement>(null);
   const { scrollingElement } = useContext(ScrollContext);
   const [proportion, setProportion] = useState<number>(0);
@@ -63,7 +66,7 @@ export const StickyView = (props: StickyViewProps) => {
     <div
       className={styles.stickyView}
       ref={elRef}
-      style={{ height, gridColumn }}
+      style={{ height, gridColumn, top, backgroundColor }}
     >
       <div
         className={styles.stickyViewSticky}
